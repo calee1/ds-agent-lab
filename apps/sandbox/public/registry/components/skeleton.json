@@ -1,0 +1,43 @@
+{
+  "name": "Skeleton",
+  "slug": "skeleton",
+  "file": "src/components/ui/skeleton.tsx",
+  "install": "pnpm dlx shadcn@latest add skeleton",
+  "import": "import { Skeleton } from \"@/components/ui/skeleton\"",
+  "exports": [
+    "Skeleton"
+  ],
+  "slots": [
+    "skeleton"
+  ],
+  "variants": {},
+  "defaultVariants": {},
+  "props": {
+    "Skeleton": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

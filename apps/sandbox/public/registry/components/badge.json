@@ -1,0 +1,73 @@
+{
+  "name": "Badge",
+  "slug": "badge",
+  "file": "src/components/ui/badge.tsx",
+  "install": "pnpm dlx shadcn@latest add badge",
+  "import": "import { Badge } from \"@/components/ui/badge\"",
+  "exports": [
+    "Badge"
+  ],
+  "slots": [],
+  "variants": {
+    "variant": [
+      "default",
+      "secondary",
+      "destructive",
+      "outline",
+      "ghost",
+      "link"
+    ]
+  },
+  "defaultVariants": {
+    "variant": "default"
+  },
+  "props": {
+    "Badge": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
+      },
+      {
+        "name": "render",
+        "type": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, {}>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "variant",
+        "type": "\"link\" | \"default\" | \"outline\" | \"secondary\" | \"ghost\" | \"destructive\"",
+        "required": false
+      }
+    ]
+  },
+  "description": "A small label for status, counts or categories.",
+  "whenToUse": [
+    "Short status or category labels",
+    "Counts next to a heading"
+  ],
+  "whenNotToUse": [
+    "Actions (use Button)",
+    "Long text"
+  ],
+  "a11y": [
+    "variant=\"destructive\" renders text-destructive on a 10% tint and failed axe color-contrast in light mode when validated. Prefer default, secondary or outline for text labels, or pair destructive with an icon and larger text."
+  ],
+  "relatedDecisions": [],
+  "example": "<Badge variant=\"secondary\">Pro</Badge>"
+}

@@ -1,0 +1,382 @@
+[
+  {
+    "id": "DR-0001",
+    "title": "Use semantic color tokens only",
+    "status": "accepted",
+    "severity": "error",
+    "scope": [
+      "all"
+    ],
+    "enforcement": {
+      "type": "eslint",
+      "ref": "ds/no-raw-colors"
+    },
+    "rationale": "Semantic tokens flip correctly between light and dark and keep brand changes to one file.",
+    "do": [
+      "bg-background",
+      "text-muted-foreground",
+      "border-border"
+    ],
+    "dont": [
+      "text-blue-500",
+      "bg-gray-100",
+      "bg-[#fff]"
+    ],
+    "body": "All color classes must come from the token set in tokens.json (`semanticColorClasses`)."
+  },
+  {
+    "id": "DR-0002",
+    "title": "No arbitrary Tailwind values",
+    "status": "accepted",
+    "severity": "error",
+    "scope": [
+      "all"
+    ],
+    "enforcement": {
+      "type": "eslint",
+      "ref": "ds/no-arbitrary-values"
+    },
+    "rationale": "Arbitrary values bypass the scale, so layouts drift from the system and cannot be changed centrally.",
+    "do": [
+      "mt-4",
+      "w-full",
+      "max-w-screen-xl"
+    ],
+    "dont": [
+      "mt-[13px]",
+      "w-[347px]",
+      "text-[17px]"
+    ],
+    "body": "Use the Tailwind scale. The only bracket form allowed is a token reference such as `w-[var(--sidebar-width)]`. Variant selectors like `[&_svg]:size-4` are fine because they sit before the utility."
+  },
+  {
+    "id": "DR-0003",
+    "title": "No inline styles",
+    "status": "accepted",
+    "severity": "error",
+    "scope": [
+      "all"
+    ],
+    "enforcement": {
+      "type": "eslint",
+      "ref": "ds/no-inline-style"
+    },
+    "rationale": "Inline styles skip theming, responsive variants and dark mode.",
+    "do": [
+      "className=\"p-4\""
+    ],
+    "dont": [
+      "style={{ padding: 16 }}"
+    ],
+    "body": "Style only through Tailwind classes and `cn()`."
+  },
+  {
+    "id": "DR-0004",
+    "title": "Use design system components, not raw form elements",
+    "status": "accepted",
+    "severity": "error",
+    "scope": [
+      "button",
+      "input",
+      "select",
+      "textarea"
+    ],
+    "enforcement": {
+      "type": "eslint",
+      "ref": "ds/no-raw-form-elements"
+    },
+    "rationale": "The components carry focus rings, invalid states, sizing and accessibility behavior. Raw elements lose all of it.",
+    "do": [
+      "<Button>",
+      "<Input>",
+      "<Textarea>",
+      "<Select>"
+    ],
+    "dont": [
+      "<button>",
+      "<input>",
+      "<select>",
+      "<textarea>"
+    ],
+    "body": "Import the component from `@/components/ui/*`. Check the registry before building a custom one."
+  },
+  {
+    "id": "DR-0005",
+    "title": "Only approved imports in route code",
+    "status": "accepted",
+    "severity": "error",
+    "scope": [
+      "all"
+    ],
+    "enforcement": {
+      "type": "eslint",
+      "ref": "ds/allowed-imports"
+    },
+    "rationale": "Importing UI primitives or other UI kits directly sidesteps the design system and its decisions.",
+    "do": [
+      "@/components/ui/*",
+      "lucide-react",
+      "react",
+      "@/lib/utils"
+    ],
+    "dont": [
+      "@base-ui/react",
+      "@radix-ui/*",
+      "react-bootstrap",
+      "@mui/*"
+    ],
+    "body": "Route code may import React, lucide-react, recharts, the `@/` alias and relative files only."
+  },
+  {
+    "id": "DR-0006",
+    "title": "Spacing stays on the scale",
+    "status": "accepted",
+    "severity": "error",
+    "scope": [
+      "all"
+    ],
+    "enforcement": {
+      "type": "eslint",
+      "ref": "ds/spacing-scale"
+    },
+    "rationale": "A consistent spacing rhythm is what makes pages read as one system.",
+    "do": [
+      "p-4",
+      "gap-6",
+      "space-y-2"
+    ],
+    "dont": [
+      "p-13",
+      "gap-15",
+      "mt-17"
+    ],
+    "body": "Padding, margin, gap and size utilities use values from `tokens.json` `spacingScale`."
+  },
+  {
+    "id": "DR-0007",
+    "title": "Every form control has an accessible label",
+    "status": "accepted",
+    "severity": "error",
+    "scope": [
+      "input",
+      "textarea",
+      "checkbox",
+      "switch",
+      "select"
+    ],
+    "enforcement": {
+      "type": "eslint",
+      "ref": "ds/control-label"
+    },
+    "rationale": "Unlabeled controls fail screen readers and make click targets smaller.",
+    "do": [
+      "<Label htmlFor=\"email\">Email</Label><Input id=\"email\" />",
+      "<Input aria-label=\"Search\" />"
+    ],
+    "dont": [
+      "<Input placeholder=\"Email\" />"
+    ],
+    "body": "Pair each control `id` with a `Label htmlFor`, or give it `aria-label` when a visible label is wrong for the design. Placeholders are not labels."
+  },
+  {
+    "id": "DR-0008",
+    "title": "Icon-only buttons need an aria-label",
+    "status": "accepted",
+    "severity": "error",
+    "scope": [
+      "button"
+    ],
+    "enforcement": {
+      "type": "eslint",
+      "ref": "ds/icon-button-label"
+    },
+    "rationale": "A button with only an icon has no name for assistive technology.",
+    "do": [
+      "<Button size=\"icon\" aria-label=\"Add item\"><Plus /></Button>"
+    ],
+    "dont": [
+      "<Button size=\"icon\"><Plus /></Button>"
+    ],
+    "body": "Applies to every Button with a `size` starting with `icon`."
+  },
+  {
+    "id": "DR-0009",
+    "title": "No horizontal page overflow at any supported width",
+    "status": "accepted",
+    "severity": "error",
+    "scope": [
+      "all"
+    ],
+    "enforcement": {
+      "type": "playwright",
+      "ref": "layout/no-h-overflow"
+    },
+    "rationale": "Sideways scrolling on a phone is a broken layout.",
+    "do": [
+      "flex-wrap",
+      "min-w-0",
+      "overflow-x-auto on wide tables"
+    ],
+    "dont": [
+      "fixed widths wider than the viewport"
+    ],
+    "body": "Checked at 375, 768 and 1280 px in both themes. Only tables, code and diagrams may be wider, inside their own scroll container."
+  },
+  {
+    "id": "DR-0010",
+    "title": "No serious or critical accessibility violations",
+    "status": "accepted",
+    "severity": "error",
+    "scope": [
+      "all"
+    ],
+    "enforcement": {
+      "type": "playwright",
+      "ref": "a11y/axe"
+    },
+    "rationale": "Accessibility is a baseline requirement, including color contrast in both themes.",
+    "do": [
+      "semantic landmarks",
+      "sufficient contrast",
+      "labelled controls"
+    ],
+    "dont": [
+      "div click handlers",
+      "low contrast text"
+    ],
+    "body": "axe-core runs in light and dark at desktop width. Serious and critical findings fail the build. Static jsx-a11y rule hits are reported under this record too."
+  },
+  {
+    "id": "DR-0011",
+    "title": "Rendered colors resolve to design tokens",
+    "status": "accepted",
+    "severity": "error",
+    "scope": [
+      "all"
+    ],
+    "enforcement": {
+      "type": "playwright",
+      "ref": "theme/token-colors"
+    },
+    "rationale": "Lint catches class names, but computed styles catch colors that arrive through other paths such as CSS or library defaults.",
+    "do": [
+      "colors that come from --background, --foreground, --primary and friends"
+    ],
+    "dont": [
+      "hard-coded rgb or hex values"
+    ],
+    "body": "For text, background and border colors on visible elements, the computed value must match a token color in the active theme (alpha variants allowed)."
+  },
+  {
+    "id": "DR-0012",
+    "title": "One primary Button per view",
+    "status": "accepted",
+    "severity": "warn",
+    "scope": [
+      "button"
+    ],
+    "enforcement": {
+      "type": "playwright",
+      "ref": "ui/single-primary"
+    },
+    "rationale": "Two competing primary actions dilute the main task.",
+    "do": [
+      "one default-variant Button, others outline or ghost"
+    ],
+    "dont": [
+      "several default-variant Buttons side by side"
+    ],
+    "body": "Counts visible `data-slot=\"button\"` elements with the default variant outside dialogs. Dialog footers may have their own primary."
+  },
+  {
+    "id": "DR-0013",
+    "title": "Destructive actions are confirmed with an AlertDialog",
+    "status": "accepted",
+    "severity": "error",
+    "scope": [
+      "button",
+      "alert-dialog"
+    ],
+    "enforcement": {
+      "type": "reviewer",
+      "ref": "review/destructive-confirm"
+    },
+    "rationale": "Deleting data without a confirmation step causes irreversible mistakes. Intent is hard to detect from code alone, so the reviewer judges it.",
+    "do": [
+      "Delete button opens AlertDialog with a Cancel and a destructive Action"
+    ],
+    "dont": [
+      "Delete button that acts immediately"
+    ],
+    "body": "Any control that deletes, removes or resets user data must open an `AlertDialog` that names what will be lost."
+  },
+  {
+    "id": "DR-0014",
+    "title": "Pages use the standard layout wrapper and type hierarchy",
+    "status": "accepted",
+    "severity": "warn",
+    "scope": [
+      "all"
+    ],
+    "enforcement": {
+      "type": "reviewer",
+      "ref": "review/page-layout"
+    },
+    "rationale": "A shared page frame and heading scale make pages feel related.",
+    "do": [
+      "min-h-screen bg-background wrapper",
+      "max-w-screen-xl mx-auto px-4 py-8 space-y-6",
+      "h1 text-2xl font-bold tracking-tight"
+    ],
+    "dont": [
+      "custom page chrome",
+      "multiple h1 elements",
+      "skipping heading levels"
+    ],
+    "body": "See the `page-layout` pattern. The reviewer checks structure and heading order."
+  },
+  {
+    "id": "DR-0015",
+    "title": "Pages load without console errors",
+    "status": "accepted",
+    "severity": "error",
+    "scope": [
+      "all"
+    ],
+    "enforcement": {
+      "type": "playwright",
+      "ref": "runtime/no-console-errors"
+    },
+    "rationale": "Console errors usually point to broken props, missing keys or failed requests.",
+    "do": [
+      "clean console on load"
+    ],
+    "dont": [
+      "React warnings",
+      "uncaught exceptions",
+      "404 requests"
+    ],
+    "body": "Any `console.error`, page error or failed request during load fails the check."
+  },
+  {
+    "id": "DR-0016",
+    "title": "Registry components match approved visual baselines",
+    "status": "accepted",
+    "severity": "error",
+    "scope": [
+      "all"
+    ],
+    "enforcement": {
+      "type": "visual",
+      "ref": "visual/baseline"
+    },
+    "rationale": "Detects the design system itself drifting, such as a token edit or a shadcn upgrade changing every Button.",
+    "do": [
+      "update baselines deliberately with a recorded decision"
+    ],
+    "dont": [
+      "accept snapshot updates without review"
+    ],
+    "body": "Screenshots of the `/gallery` route in light and dark are compared with committed baselines."
+  }
+]

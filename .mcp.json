@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ds-registry": {
+      "command": "node",
+      "args": ["packages/mcp-server/src/server.ts"]
+    }
+  }
+}

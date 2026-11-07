@@ -1,0 +1,221 @@
+{
+  "name": "Progress",
+  "slug": "progress",
+  "file": "src/components/ui/progress.tsx",
+  "install": "pnpm dlx shadcn@latest add progress",
+  "import": "import { Progress, ProgressTrack, ProgressIndicator, ProgressLabel, ProgressValue } from \"@/components/ui/progress\"",
+  "exports": [
+    "Progress",
+    "ProgressTrack",
+    "ProgressIndicator",
+    "ProgressLabel",
+    "ProgressValue"
+  ],
+  "slots": [
+    "progress",
+    "progress-track",
+    "progress-indicator",
+    "progress-label",
+    "progress-value"
+  ],
+  "variants": {},
+  "defaultVariants": {},
+  "props": {
+    "Progress": [
+      {
+        "name": "aria-valuetext",
+        "type": "string",
+        "required": false,
+        "description": "A string value that provides a user-friendly name for `aria-valuenow`, the current value of the progress bar."
+      },
+      {
+        "name": "format",
+        "type": "Intl.NumberFormatOptions",
+        "required": false,
+        "description": "Options to format the value."
+      },
+      {
+        "name": "getAriaValueText",
+        "type": "(formattedValue: string, value: number | null) => string",
+        "required": false,
+        "description": "Accepts a function which returns a string value that provides a human-readable text alternative for the current value of the progress bar."
+      },
+      {
+        "name": "locale",
+        "type": "Intl.LocalesArgument",
+        "required": false,
+        "description": "The locale used by `Intl.NumberFormat` when formatting the value.\nDefaults to the user's runtime locale."
+      },
+      {
+        "name": "max",
+        "type": "number",
+        "required": false,
+        "description": "The maximum value."
+      },
+      {
+        "name": "min",
+        "type": "number",
+        "required": false,
+        "description": "The minimum value."
+      },
+      {
+        "name": "value",
+        "type": "number",
+        "required": true,
+        "description": "The current value. The component is indeterminate when value is `null`."
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: ProgressRootState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ProgressRootState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties | ((state: ProgressRootState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      }
+    ],
+    "ProgressTrack": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: ProgressTrackState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ProgressTrackState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties | ((state: ProgressTrackState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      }
+    ],
+    "ProgressIndicator": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: ProgressIndicatorState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ProgressIndicatorState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties | ((state: ProgressIndicatorState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      }
+    ],
+    "ProgressLabel": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: ProgressLabelState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ProgressLabelState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties | ((state: ProgressLabelState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      }
+    ],
+    "ProgressValue": [
+      {
+        "name": "children",
+        "type": "(formattedValue: string | null, value: number | null) => React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: ProgressValueState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties | ((state: ProgressValueState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "render",
+        "type": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ProgressValueState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

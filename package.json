@@ -1,0 +1,11 @@
+{
+  "name": "ds-agent-lab",
+  "private": true,
+  "packageManager": "pnpm@9.14.2",
+  "scripts": {
+    "dev": "pnpm --filter sandbox dev",
+    "registry:build": "pnpm --filter @ds/registry build",
+    "validate": "pnpm --filter @ds/validators validate",
+    "visual": "pnpm --filter @ds/validators visual"
+  }
+}

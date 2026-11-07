@@ -1,0 +1,57 @@
+{
+  "name": "Separator",
+  "slug": "separator",
+  "file": "src/components/ui/separator.tsx",
+  "install": "pnpm dlx shadcn@latest add separator",
+  "import": "import { Separator } from \"@/components/ui/separator\"",
+  "exports": [
+    "Separator"
+  ],
+  "slots": [
+    "separator"
+  ],
+  "variants": {},
+  "defaultVariants": {},
+  "props": {
+    "Separator": [
+      {
+        "name": "orientation",
+        "type": "Orientation",
+        "required": false,
+        "description": "The orientation of the separator."
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: SeparatorState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SeparatorState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties | ((state: SeparatorState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

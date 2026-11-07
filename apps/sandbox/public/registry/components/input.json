@@ -1,0 +1,63 @@
+{
+  "name": "Input",
+  "slug": "input",
+  "file": "src/components/ui/input.tsx",
+  "install": "pnpm dlx shadcn@latest add input",
+  "import": "import { Input } from \"@/components/ui/input\"",
+  "exports": [
+    "Input"
+  ],
+  "slots": [
+    "input"
+  ],
+  "variants": {},
+  "defaultVariants": {},
+  "props": {
+    "Input": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "type",
+        "type": "React.HTMLInputTypeAttribute",
+        "required": false
+      },
+      {
+        "name": "value",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

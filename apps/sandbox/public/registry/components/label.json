@@ -1,0 +1,48 @@
+{
+  "name": "Label",
+  "slug": "label",
+  "file": "src/components/ui/label.tsx",
+  "install": "pnpm dlx shadcn@latest add label",
+  "import": "import { Label } from \"@/components/ui/label\"",
+  "exports": [
+    "Label"
+  ],
+  "slots": [
+    "label"
+  ],
+  "variants": {},
+  "defaultVariants": {},
+  "props": {
+    "Label": [
+      {
+        "name": "htmlFor",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

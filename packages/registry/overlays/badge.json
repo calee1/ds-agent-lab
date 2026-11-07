@@ -1,0 +1,9 @@
+{
+  "description": "A small label for status, counts or categories.",
+  "whenToUse": ["Short status or category labels", "Counts next to a heading"],
+  "whenNotToUse": ["Actions (use Button)", "Long text"],
+  "a11y": [
+    "variant=\"destructive\" renders text-destructive on a 10% tint and failed axe color-contrast in light mode when validated. Prefer default, secondary or outline for text labels, or pair destructive with an icon and larger text."
+  ],
+  "example": "<Badge variant=\"secondary\">Pro</Badge>"
+}

@@ -1,0 +1,127 @@
+{
+  "name": "Alert",
+  "slug": "alert",
+  "file": "src/components/ui/alert.tsx",
+  "install": "pnpm dlx shadcn@latest add alert",
+  "import": "import { Alert, AlertTitle, AlertDescription, AlertAction } from \"@/components/ui/alert\"",
+  "exports": [
+    "Alert",
+    "AlertTitle",
+    "AlertDescription",
+    "AlertAction"
+  ],
+  "slots": [
+    "alert",
+    "alert-title",
+    "alert-description",
+    "alert-action"
+  ],
+  "variants": {
+    "variant": [
+      "default",
+      "destructive"
+    ]
+  },
+  "defaultVariants": {
+    "variant": "default"
+  },
+  "props": {
+    "Alert": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "variant",
+        "type": "\"default\" | \"destructive\"",
+        "required": false
+      }
+    ],
+    "AlertTitle": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "AlertDescription": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "AlertAction": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

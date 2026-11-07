@@ -1,0 +1,24 @@
+{
+  "name": "@ds/validators",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node src/cli.ts",
+    "test": "node --test --test-concurrency=1 --test-timeout=400000 \"test/*.test.ts\"",
+    "visual": "node src/visual-cli.ts"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@typescript-eslint/parser": "^8.40.0",
+    "eslint": "^9.34.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "gray-matter": "^4.0.3",
+    "pixelmatch": "^8.0.0",
+    "playwright": "^1.55.0",
+    "pngjs": "^7.0.0",
+    "typescript": "^5.9.0"
+  },
+  "devDependencies": {
+    "@types/pngjs": "^6.0.5"
+  }
+}

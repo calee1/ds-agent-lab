@@ -1,0 +1,63 @@
+{
+  "name": "Textarea",
+  "slug": "textarea",
+  "file": "src/components/ui/textarea.tsx",
+  "install": "pnpm dlx shadcn@latest add textarea",
+  "import": "import { Textarea } from \"@/components/ui/textarea\"",
+  "exports": [
+    "Textarea"
+  ],
+  "slots": [
+    "textarea"
+  ],
+  "variants": {},
+  "defaultVariants": {},
+  "props": {
+    "Textarea": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "rows",
+        "type": "number",
+        "required": false
+      },
+      {
+        "name": "value",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

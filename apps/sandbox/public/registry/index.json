@@ -1,0 +1,297 @@
+{
+  "components": [
+    {
+      "slug": "alert",
+      "name": "Alert",
+      "exports": [
+        "Alert",
+        "AlertTitle",
+        "AlertDescription",
+        "AlertAction"
+      ]
+    },
+    {
+      "slug": "alert-dialog",
+      "name": "Alert Dialog",
+      "exports": [
+        "AlertDialog",
+        "AlertDialogAction",
+        "AlertDialogCancel",
+        "AlertDialogContent",
+        "AlertDialogDescription",
+        "AlertDialogFooter",
+        "AlertDialogHeader",
+        "AlertDialogMedia",
+        "AlertDialogOverlay",
+        "AlertDialogPortal",
+        "AlertDialogTitle",
+        "AlertDialogTrigger"
+      ]
+    },
+    {
+      "slug": "avatar",
+      "name": "Avatar",
+      "exports": [
+        "Avatar",
+        "AvatarImage",
+        "AvatarFallback",
+        "AvatarGroup",
+        "AvatarGroupCount",
+        "AvatarBadge"
+      ]
+    },
+    {
+      "slug": "badge",
+      "name": "Badge",
+      "exports": [
+        "Badge"
+      ]
+    },
+    {
+      "slug": "button",
+      "name": "Button",
+      "exports": [
+        "Button"
+      ]
+    },
+    {
+      "slug": "card",
+      "name": "Card",
+      "exports": [
+        "Card",
+        "CardHeader",
+        "CardFooter",
+        "CardTitle",
+        "CardAction",
+        "CardDescription",
+        "CardContent"
+      ]
+    },
+    {
+      "slug": "checkbox",
+      "name": "Checkbox",
+      "exports": [
+        "Checkbox"
+      ]
+    },
+    {
+      "slug": "dialog",
+      "name": "Dialog",
+      "exports": [
+        "Dialog",
+        "DialogClose",
+        "DialogContent",
+        "DialogDescription",
+        "DialogFooter",
+        "DialogHeader",
+        "DialogOverlay",
+        "DialogPortal",
+        "DialogTitle",
+        "DialogTrigger"
+      ]
+    },
+    {
+      "slug": "input",
+      "name": "Input",
+      "exports": [
+        "Input"
+      ]
+    },
+    {
+      "slug": "label",
+      "name": "Label",
+      "exports": [
+        "Label"
+      ]
+    },
+    {
+      "slug": "progress",
+      "name": "Progress",
+      "exports": [
+        "Progress",
+        "ProgressTrack",
+        "ProgressIndicator",
+        "ProgressLabel",
+        "ProgressValue"
+      ]
+    },
+    {
+      "slug": "select",
+      "name": "Select",
+      "exports": [
+        "Select",
+        "SelectContent",
+        "SelectGroup",
+        "SelectItem",
+        "SelectLabel",
+        "SelectScrollDownButton",
+        "SelectScrollUpButton",
+        "SelectSeparator",
+        "SelectTrigger",
+        "SelectValue"
+      ]
+    },
+    {
+      "slug": "separator",
+      "name": "Separator",
+      "exports": [
+        "Separator"
+      ]
+    },
+    {
+      "slug": "skeleton",
+      "name": "Skeleton",
+      "exports": [
+        "Skeleton"
+      ]
+    },
+    {
+      "slug": "switch",
+      "name": "Switch",
+      "exports": [
+        "Switch"
+      ]
+    },
+    {
+      "slug": "table",
+      "name": "Table",
+      "exports": [
+        "Table",
+        "TableHeader",
+        "TableBody",
+        "TableFooter",
+        "TableHead",
+        "TableRow",
+        "TableCell",
+        "TableCaption"
+      ]
+    },
+    {
+      "slug": "tabs",
+      "name": "Tabs",
+      "exports": [
+        "Tabs",
+        "TabsList",
+        "TabsTrigger",
+        "TabsContent"
+      ]
+    },
+    {
+      "slug": "textarea",
+      "name": "Textarea",
+      "exports": [
+        "Textarea"
+      ]
+    },
+    {
+      "slug": "tooltip",
+      "name": "Tooltip",
+      "exports": [
+        "Tooltip",
+        "TooltipTrigger",
+        "TooltipContent",
+        "TooltipProvider"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DR-0001",
+      "title": "Use semantic color tokens only",
+      "severity": "error"
+    },
+    {
+      "id": "DR-0002",
+      "title": "No arbitrary Tailwind values",
+      "severity": "error"
+    },
+    {
+      "id": "DR-0003",
+      "title": "No inline styles",
+      "severity": "error"
+    },
+    {
+      "id": "DR-0004",
+      "title": "Use design system components, not raw form elements",
+      "severity": "error"
+    },
+    {
+      "id": "DR-0005",
+      "title": "Only approved imports in route code",
+      "severity": "error"
+    },
+    {
+      "id": "DR-0006",
+      "title": "Spacing stays on the scale",
+      "severity": "error"
+    },
+    {
+      "id": "DR-0007",
+      "title": "Every form control has an accessible label",
+      "severity": "error"
+    },
+    {
+      "id": "DR-0008",
+      "title": "Icon-only buttons need an aria-label",
+      "severity": "error"
+    },
+    {
+      "id": "DR-0009",
+      "title": "No horizontal page overflow at any supported width",
+      "severity": "error"
+    },
+    {
+      "id": "DR-0010",
+      "title": "No serious or critical accessibility violations",
+      "severity": "error"
+    },
+    {
+      "id": "DR-0011",
+      "title": "Rendered colors resolve to design tokens",
+      "severity": "error"
+    },
+    {
+      "id": "DR-0012",
+      "title": "One primary Button per view",
+      "severity": "warn"
+    },
+    {
+      "id": "DR-0013",
+      "title": "Destructive actions are confirmed with an AlertDialog",
+      "severity": "error"
+    },
+    {
+      "id": "DR-0014",
+      "title": "Pages use the standard layout wrapper and type hierarchy",
+      "severity": "warn"
+    },
+    {
+      "id": "DR-0015",
+      "title": "Pages load without console errors",
+      "severity": "error"
+    },
+    {
+      "id": "DR-0016",
+      "title": "Registry components match approved visual baselines",
+      "severity": "error"
+    }
+  ],
+  "patterns": [
+    {
+      "slug": "card-form",
+      "title": "Form inside a Card"
+    },
+    {
+      "slug": "confirm-destructive",
+      "title": "Confirm destructive action"
+    },
+    {
+      "slug": "form-field",
+      "title": "Form field"
+    },
+    {
+      "slug": "page-layout",
+      "title": "Page layout"
+    }
+  ]
+}

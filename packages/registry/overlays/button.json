@@ -1,0 +1,11 @@
+{
+  "description": "A clickable control for actions.",
+  "whenToUse": ["Primary and secondary actions", "Dialog triggers and confirmations"],
+  "whenNotToUse": ["Navigation between pages (use a link)", "Toggling state (use Toggle or Switch)"],
+  "a11y": [
+    "variant=\"destructive\" renders text-destructive on a 10% tint and failed axe color-contrast in light mode when validated. Until the variant is fixed in the system, use outline for destructive triggers and reserve destructive for large text or pair it with an icon.",
+    "Icon-only buttons (size icon, icon-xs, icon-sm, icon-lg) require aria-label (DR-0008)."
+  ],
+  "relatedDecisions": ["DR-0008", "DR-0012", "DR-0013"],
+  "example": "<Button variant=\"outline\">Cancel</Button>"
+}

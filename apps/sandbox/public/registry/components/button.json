@@ -1,0 +1,125 @@
+{
+  "name": "Button",
+  "slug": "button",
+  "file": "src/components/ui/button.tsx",
+  "install": "pnpm dlx shadcn@latest add button",
+  "import": "import { Button } from \"@/components/ui/button\"",
+  "exports": [
+    "Button"
+  ],
+  "slots": [
+    "button"
+  ],
+  "variants": {
+    "variant": [
+      "default",
+      "outline",
+      "secondary",
+      "ghost",
+      "destructive",
+      "link"
+    ],
+    "size": [
+      "default",
+      "xs",
+      "sm",
+      "lg",
+      "icon",
+      "icon-xs",
+      "icon-sm",
+      "icon-lg"
+    ]
+  },
+  "defaultVariants": {
+    "variant": "default",
+    "size": "default"
+  },
+  "props": {
+    "Button": [
+      {
+        "name": "focusableWhenDisabled",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the button should be focusable when disabled."
+      },
+      {
+        "name": "nativeButton",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (for example, `<div>`)."
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "type",
+        "type": "\"button\" | \"submit\" | \"reset\"",
+        "required": false
+      },
+      {
+        "name": "value",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: ButtonState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ButtonState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties | ((state: ButtonState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      },
+      {
+        "name": "variant",
+        "type": "\"link\" | \"default\" | \"outline\" | \"secondary\" | \"ghost\" | \"destructive\"",
+        "required": false
+      },
+      {
+        "name": "size",
+        "type": "\"default\" | \"sm\" | \"xs\" | \"lg\" | \"icon\" | \"icon-xs\" | \"icon-sm\" | \"icon-lg\"",
+        "required": false
+      }
+    ]
+  },
+  "description": "A clickable control for actions.",
+  "whenToUse": [
+    "Primary and secondary actions",
+    "Dialog triggers and confirmations"
+  ],
+  "whenNotToUse": [
+    "Navigation between pages (use a link)",
+    "Toggling state (use Toggle or Switch)"
+  ],
+  "a11y": [
+    "variant=\"destructive\" renders text-destructive on a 10% tint and failed axe color-contrast in light mode when validated. Until the variant is fixed in the system, use outline for destructive triggers and reserve destructive for large text or pair it with an icon.",
+    "Icon-only buttons (size icon, icon-xs, icon-sm, icon-lg) require aria-label (DR-0008)."
+  ],
+  "relatedDecisions": [
+    "DR-0008",
+    "DR-0012",
+    "DR-0013"
+  ],
+  "example": "<Button variant=\"outline\">Cancel</Button>"
+}
