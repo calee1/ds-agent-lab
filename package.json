@@ -3,6 +3,7 @@
   "private": true,
   "packageManager": "pnpm@9.14.2",
   "scripts": {
+    "postinstall": "pnpm registry:build",
     "dev": "pnpm --filter sandbox dev",
     "registry:build": "pnpm --filter @ds/registry build",
     "validate": "pnpm --filter @ds/validators validate",
