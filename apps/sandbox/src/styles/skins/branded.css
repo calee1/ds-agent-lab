@@ -1,0 +1,108 @@
+/* Branded skin — bright oceanic, seafoam & teal, light and dark */
+
+[data-skin="branded"] {
+    /* More rounded than default (0.625rem) */
+    --radius: 1rem;
+
+    /* Override font to Nunito — rounded, friendly, oceanic feel */
+    --font-sans: 'Nunito Variable', sans-serif;
+
+    /* ── Light mode ──────────────────────────────────────────────── */
+    --background:           oklch(0.97  0.012 193);
+    --foreground:           oklch(0.17  0.025 215);
+    --card:                 oklch(0.995 0.008 190);
+    --card-foreground:      oklch(0.17  0.025 215);
+    --popover:              oklch(0.995 0.008 190);
+    --popover-foreground:   oklch(0.17  0.025 215);
+    --primary:              oklch(0.52  0.16  185);  /* teal */
+    --primary-foreground:   oklch(0.98  0     0  );
+    --secondary:            oklch(0.88  0.06  175);  /* seafoam */
+    --secondary-foreground: oklch(0.17  0.025 215);
+    --muted:                oklch(0.92  0.03  185);
+    --muted-foreground:     oklch(0.46  0.05  200);
+    --accent:               oklch(0.78  0.11  170);  /* bright seafoam */
+    --accent-foreground:    oklch(0.17  0.025 215);
+    --destructive:          oklch(0.577 0.245 27.3);
+    --border:               oklch(0.86  0.04  185);
+    --input:                oklch(0.86  0.04  185);
+    --ring:                 oklch(0.52  0.16  185);
+    --chart-1:              oklch(0.52  0.16  185);
+    --chart-2:              oklch(0.65  0.14  165);
+    --chart-3:              oklch(0.50  0.14  220);
+    --chart-4:              oklch(0.72  0.10  155);
+    --chart-5:              oklch(0.60  0.12  200);
+    --sidebar:              oklch(0.93  0.03  187);
+    --sidebar-foreground:   oklch(0.17  0.025 215);
+    --sidebar-primary:      oklch(0.52  0.16  185);
+    --sidebar-primary-foreground: oklch(0.98 0 0);
+    --sidebar-accent:       oklch(0.86  0.06  175);
+    --sidebar-accent-foreground: oklch(0.17 0.025 215);
+    --sidebar-border:       oklch(0.84  0.04  185);
+    --sidebar-ring:         oklch(0.52  0.16  185);
+}
+
+/* Elevations — layered shadows with a subtle teal tint */
+[data-skin="branded"] [data-slot="card"] {
+    box-shadow:
+        0 1px 3px  oklch(0.52 0.16 185 / 10%),
+        0 4px 16px oklch(0.52 0.16 185 / 8%);
+}
+
+[data-skin="branded"] [data-slot="popover"],
+[data-skin="branded"] [data-slot="dialog-content"],
+[data-skin="branded"] [data-slot="sheet-content"],
+[data-skin="branded"] [data-slot="drawer-content"] {
+    box-shadow:
+        0 4px 12px  oklch(0 0 0 / 10%),
+        0 16px 48px oklch(0 0 0 / 12%);
+}
+
+/* ── Dark mode ───────────────────────────────────────────────────── */
+[data-skin="branded"].dark {
+    --background:           oklch(0.13  0.025 220);  /* deep ocean */
+    --foreground:           oklch(0.93  0.02  190);
+    --card:                 oklch(0.18  0.03  215);
+    --card-foreground:      oklch(0.93  0.02  190);
+    --popover:              oklch(0.18  0.03  215);
+    --popover-foreground:   oklch(0.93  0.02  190);
+    --primary:              oklch(0.68  0.16  180);  /* brighter teal for dark */
+    --primary-foreground:   oklch(0.10  0.02  220);
+    --secondary:            oklch(0.25  0.04  210);
+    --secondary-foreground: oklch(0.90  0.02  185);
+    --muted:                oklch(0.22  0.03  215);
+    --muted-foreground:     oklch(0.60  0.05  190);
+    --accent:               oklch(0.30  0.06  185);
+    --accent-foreground:    oklch(0.90  0.02  185);
+    --destructive:          oklch(0.704 0.191 22.2);
+    --border:               oklch(1     0     0   / 12%);
+    --input:                oklch(1     0     0   / 15%);
+    --ring:                 oklch(0.68  0.16  180);
+    --chart-1:              oklch(0.68  0.16  180);
+    --chart-2:              oklch(0.72  0.13  165);
+    --chart-3:              oklch(0.60  0.14  220);
+    --chart-4:              oklch(0.76  0.09  155);
+    --chart-5:              oklch(0.64  0.11  200);
+    --sidebar:              oklch(0.17  0.03  218);
+    --sidebar-foreground:   oklch(0.93  0.02  190);
+    --sidebar-primary:      oklch(0.68  0.16  180);
+    --sidebar-primary-foreground: oklch(0.10 0.02 220);
+    --sidebar-accent:       oklch(0.28  0.05  210);
+    --sidebar-accent-foreground: oklch(0.90 0.02 185);
+    --sidebar-border:       oklch(1     0     0   / 12%);
+    --sidebar-ring:         oklch(0.68  0.16  180);
+}
+
+[data-skin="branded"].dark [data-slot="card"] {
+    box-shadow:
+        0 1px 3px  oklch(0 0 0 / 30%),
+        0 4px 20px oklch(0 0 0 / 25%);
+}
+
+[data-skin="branded"].dark [data-slot="popover"],
+[data-skin="branded"].dark [data-slot="dialog-content"],
+[data-skin="branded"].dark [data-slot="sheet-content"],
+[data-skin="branded"].dark [data-slot="drawer-content"] {
+    box-shadow:
+        0 4px 16px  oklch(0 0 0 / 40%),
+        0 20px 60px oklch(0 0 0 / 35%);
+}
