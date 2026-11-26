@@ -31,7 +31,7 @@
       },
       {
         "name": "children",
-        "type": "React.ReactNode",
+        "type": "ReactNode",
         "required": false
       },
       {
@@ -42,13 +42,13 @@
       },
       {
         "name": "render",
-        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ScrollAreaRootS...",
+        "type": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ScrollAreaRootState>",
         "required": false,
         "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
       },
       {
         "name": "style",
-        "type": "React.CSSProperties | ((state: ScrollAreaRootState) => React.CSSProperties | undefined)",
+        "type": "CSSProperties | ((state: ScrollAreaRootState) => React.CSSProperties | undefined)",
         "required": false,
         "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
       }
@@ -73,7 +73,7 @@
       },
       {
         "name": "children",
-        "type": "React.ReactNode",
+        "type": "ReactNode",
         "required": false
       },
       {
@@ -84,13 +84,13 @@
       },
       {
         "name": "render",
-        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ScrollAreaScrol...",
+        "type": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ScrollAreaScrollbarState>",
         "required": false,
         "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
       },
       {
         "name": "style",
-        "type": "React.CSSProperties | ((state: ScrollAreaScrollbarState) => React.CSSProperties | undefined)",
+        "type": "CSSProperties | ((state: ScrollAreaScrollbarState) => React.CSSProperties | undefined)",
         "required": false,
         "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
       }
