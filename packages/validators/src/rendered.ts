@@ -27,7 +27,6 @@ function make(ref: string, ruleId: string, file: string, message: string): Viola
 }
 
 async function keyboardFocusIssues(page: Page): Promise<string[]> {
-  // Reset to a known starting point
   await page.evaluate(() => { (document.body as HTMLElement).focus?.() })
   const issues: string[] = []
   for (let i = 0; i < 15; i++) {
@@ -115,6 +114,9 @@ export async function renderedChecks(baseUrl: string, routePath: string, label: 
       for (const vp of VIEWPORTS) {
         const context = await browser.newContext({ viewport: { width: vp.width, height: vp.height }, colorScheme: isDark ? "dark" : "light" })
         await context.addInitScript(({ skin, isDark }: { skin: string; isDark: boolean }) => {
+          // Write localStorage before React reads it so useSkinSwitcher initialises correctly
+          try { localStorage.setItem("skin", skin) } catch {}
+          try { localStorage.setItem("mode", isDark ? "dark" : "light") } catch {}
           const apply = () => {
             document.documentElement?.classList.toggle("dark", isDark)
             document.documentElement?.setAttribute("data-skin", skin)

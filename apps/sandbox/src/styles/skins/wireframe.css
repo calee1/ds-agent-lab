@@ -38,8 +38,8 @@
     --sidebar-ring: oklch(0.5 0 0);
 }
 
-/* Suppress shadows in wireframe — tokens can't reach box-shadow directly */
-[data-skin="wireframe"] * {
+/* Suppress shadows in wireframe — but allow focus-visible rings (implemented as box-shadow) */
+[data-skin="wireframe"] *:not(:focus-visible) {
     box-shadow: none !important;
 }
 

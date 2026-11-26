@@ -14,7 +14,7 @@
     --card-foreground:      oklch(0.17  0.025 215);
     --popover:              oklch(0.995 0.008 190);
     --popover-foreground:   oklch(0.17  0.025 215);
-    --primary:              oklch(0.52  0.16  185);  /* teal */
+    --primary:              oklch(0.37  0.16  185);  /* teal — darkened for WCAG AA contrast */
     --primary-foreground:   oklch(0.98  0     0  );
     --secondary:            oklch(0.88  0.06  175);  /* seafoam */
     --secondary-foreground: oklch(0.17  0.025 215);
@@ -25,7 +25,7 @@
     --destructive:          oklch(0.577 0.245 27.3);
     --border:               oklch(0.86  0.04  185);
     --input:                oklch(0.86  0.04  185);
-    --ring:                 oklch(0.52  0.16  185);
+    --ring:                 oklch(0.37  0.16  185);
     --chart-1:              oklch(0.52  0.16  185);
     --chart-2:              oklch(0.65  0.14  165);
     --chart-3:              oklch(0.50  0.14  220);
@@ -33,12 +33,12 @@
     --chart-5:              oklch(0.60  0.12  200);
     --sidebar:              oklch(0.93  0.03  187);
     --sidebar-foreground:   oklch(0.17  0.025 215);
-    --sidebar-primary:      oklch(0.52  0.16  185);
+    --sidebar-primary:      oklch(0.37  0.16  185);
     --sidebar-primary-foreground: oklch(0.98 0 0);
     --sidebar-accent:       oklch(0.86  0.06  175);
     --sidebar-accent-foreground: oklch(0.17 0.025 215);
     --sidebar-border:       oklch(0.84  0.04  185);
-    --sidebar-ring:         oklch(0.52  0.16  185);
+    --sidebar-ring:         oklch(0.37  0.16  185);
 }
 
 /* Elevations — layered shadows with a subtle teal tint */
