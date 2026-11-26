@@ -21,10 +21,12 @@ pnpm --filter @ds/validators exec playwright install chromium
 | Path | Purpose |
 |---|---|
 | `apps/sandbox` | Vite + React + TS + Tailwind v4 + shadcn app. Agent-built pages live in `src/routes/<slug>`. `src/fixtures` holds deliberate good and bad pages that test the validators. |
-| `packages/registry` | Component API generated from the source, tokens from `index.css`, decision records (`decisions/`), patterns and curated overlays. |
-| `packages/mcp-server` | MCP tools over the registry. `.mcp.json` registers it as `ds-registry`. |
-| `packages/validators` | Lint rules, Playwright and axe checks, visual baselines, report builder. |
-| `.claude/` | `ui-builder` and `ui-reviewer` agents and the `/build-ui` command. |
+| `packages/registry` | Component API generated from the source, tokens from CSS, decision records (`decisions/system/`, `decisions/skins/`), patterns, overlays and skin metadata (`skins/`). |
+| `packages/mcp-server` | MCP tools over the registry (`.mcp.json` registers it as `ds-registry`): `list_components`, `get_component`, `get_tokens`, `search_decisions`, `get_pattern`, `validate_code`, `list_skins`, `get_skin`. |
+| `packages/validators` | Lint rules, Playwright and axe checks, keyboard focus checks, visual baselines, report builder. |
+| `.claude/agents/` | `ui-builder` (builds routes), `ui-reviewer` (judges reviewer-enforced DRs and visual quality), `ui-accessibility` (judges keyboard patterns). |
+| `.claude/commands/` | `/build-ui` command — orchestrates all three gates. |
+| `.claude/skills/design-system/` | MCP-first skill guide for agents: tool call order, import rules, skin guidance. |
 
 ## Commands
 
@@ -37,6 +39,22 @@ pnpm visual                    # compare /gallery against baselines (add --updat
 
 Tests (run per package): `pnpm --filter @ds/validators test`, `pnpm --filter @ds/mcp-server test`.
 
+## Skins
+
+The sandbox supports three visual treatments set via `data-skin` on `<html>`:
+
+| Skin | Modes | Character |
+|------|-------|-----------|
+| `default` | light, dark | Neutral grays, standard radius |
+| `wireframe` | light only | Grayscale, square corners, dashed cards |
+| `branded` | light, dark | Oceanic teal, Nunito, 1 rem radius, elevated shadows |
+
 ## Building a UI with agents
 
-Open Claude Code in this folder and run `/build-ui <description of the page>`. The builder reads the registry and decision records, the validators check the result, and a read-only reviewer judges what automation cannot. A page is presented only when everything passes, within 3 repair rounds.
+Open Claude Code in this folder and run `/build-ui <description of the page>`. The builder reads the registry and decision records, then three gates check the result:
+
+1. **Automated** — lint, typecheck, Playwright (axe, token colors, keyboard focus rings, layout)
+2. **Reviewer** — reviewer-enforced decision records, brief completeness, visual quality
+3. **Accessibility** — Escape key behavior, focus restoration, tab trap, tab order
+
+A page is presented only when all three gates pass on the same code, within 3 repair rounds total.

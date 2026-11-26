@@ -26,6 +26,31 @@ function make(ref: string, ruleId: string, file: string, message: string): Viola
   return { drId: d.id, ruleId, severity: d.severity, file, line: 0, message }
 }
 
+async function keyboardFocusIssues(page: Page): Promise<string[]> {
+  // Reset to a known starting point
+  await page.evaluate(() => { (document.body as HTMLElement).focus?.() })
+  const issues: string[] = []
+  for (let i = 0; i < 15; i++) {
+    await page.keyboard.press("Tab")
+    const result = await page.evaluate((): string | null => {
+      const el = document.activeElement as HTMLElement | null
+      if (!el || el === document.body || el === document.documentElement) return null
+      const s = getComputedStyle(el)
+      const hasOutline = parseFloat(s.outlineWidth) > 0 && s.outlineStyle !== "none"
+      const hasRing = s.boxShadow !== "none" && s.boxShadow !== ""
+      if (!hasOutline && !hasRing) {
+        const id = el.id ? `#${el.id}` : ""
+        const label = el.getAttribute("aria-label")?.slice(0, 20) ?? el.textContent?.trim().slice(0, 20) ?? ""
+        return `${el.tagName.toLowerCase()}${id}${label ? `(${label})` : ""}`
+      }
+      return "ok"
+    })
+    if (result === null) break
+    if (result !== "ok") issues.push(`${result} has no visible focus indicator`)
+  }
+  return issues.slice(0, 5)
+}
+
 async function tokenColorIssues(page: Page): Promise<string[]> {
   const names = Object.keys(tokens.colors)
   return page.evaluate((names: string[]) => {
@@ -119,6 +144,7 @@ export async function renderedChecks(baseUrl: string, routePath: string, label: 
             push(make("a11y/axe", `axe/${v.id}`, where, `${v.help} (${v.nodes.length} node${v.nodes.length === 1 ? "" : "s"}, ${v.nodes[0]?.target.join(" ")})`))
           }
           for (const msg of await tokenColorIssues(page)) push(make("theme/token-colors", "theme/token-colors", where, msg))
+          for (const msg of await keyboardFocusIssues(page)) push(make("keyboard/focus-ring", "keyboard/focus-ring", where, msg))
 
           const primaries = await page.evaluate(
             () => Array.from(document.querySelectorAll('[data-slot="button"]')).filter((el) => /(^|\s)bg-primary(\s|$)/.test(el.className) && !el.closest('[role="dialog"],[role="alertdialog"]')).length,

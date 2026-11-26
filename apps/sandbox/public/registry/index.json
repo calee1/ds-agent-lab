@@ -830,6 +830,11 @@
       "id": "DR-0016",
       "title": "Registry components match approved visual baselines",
       "severity": "error"
+    },
+    {
+      "id": "DR-0017",
+      "title": "Interactive elements must have visible focus indicators",
+      "severity": "warn"
     }
   ],
   "patterns": [
