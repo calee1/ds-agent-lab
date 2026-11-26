@@ -27,7 +27,6 @@ function make(ref: string, ruleId: string, file: string, message: string): Viola
 }
 
 async function keyboardFocusIssues(page: Page): Promise<string[]> {
-  // Reset to a known starting point
   await page.evaluate(() => { (document.body as HTMLElement).focus?.() })
   const issues: string[] = []
   for (let i = 0; i < 15; i++) {

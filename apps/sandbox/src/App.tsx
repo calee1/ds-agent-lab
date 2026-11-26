@@ -53,6 +53,7 @@ function SkinSwitcher({ skin, setSkin, mode, setMode }: {
           key={s}
           onClick={() => setSkin(s)}
           aria-pressed={skin === s}
+          className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
           style={{
             padding: "0.2rem 0.5rem",
             borderRadius: "var(--radius-sm)",
@@ -72,6 +73,7 @@ function SkinSwitcher({ skin, setSkin, mode, setMode }: {
           key={m}
           onClick={() => setMode(m)}
           aria-pressed={mode === m}
+          className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
           style={{
             padding: "0.2rem 0.5rem",
             borderRadius: "var(--radius-sm)",
