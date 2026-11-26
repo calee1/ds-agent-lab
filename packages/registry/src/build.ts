@@ -144,10 +144,34 @@ function buildTokens(): Tokens {
 }
 
 function buildDecisions(): Decision[] {
-  const dir = path.join(root, "decisions")
-  return fs.readdirSync(dir).filter((f) => f.endsWith(".md")).sort().map((f) => {
-    const { data, content } = matter(fs.readFileSync(path.join(dir, f), "utf8"))
-    return DecisionSchema.parse({ ...data, body: content.trim() })
+  const base = path.join(root, "decisions")
+  const files: { file: string; skin?: string }[] = []
+
+  // System-wide rules
+  const systemDir = path.join(base, "system")
+  if (fs.existsSync(systemDir)) {
+    for (const f of fs.readdirSync(systemDir).filter((f) => f.endsWith(".md")).sort())
+      files.push({ file: path.join(systemDir, f) })
+  } else {
+    // Fallback: flat decisions/ for backwards compat during migration
+    for (const f of fs.readdirSync(base).filter((f) => f.endsWith(".md")).sort())
+      files.push({ file: path.join(base, f) })
+  }
+
+  // Skin-specific rules: decisions/skins/<skin>/*.md
+  const skinsDir = path.join(base, "skins")
+  if (fs.existsSync(skinsDir)) {
+    for (const skin of fs.readdirSync(skinsDir).sort()) {
+      const skinDir = path.join(skinsDir, skin)
+      if (!fs.statSync(skinDir).isDirectory()) continue
+      for (const f of fs.readdirSync(skinDir).filter((f) => f.endsWith(".md")).sort())
+        files.push({ file: path.join(skinDir, f), skin })
+    }
+  }
+
+  return files.map(({ file, skin }) => {
+    const { data, content } = matter(fs.readFileSync(file, "utf8"))
+    return DecisionSchema.parse({ ...data, skin: data.skin ?? skin, body: content.trim() })
   })
 }
 
