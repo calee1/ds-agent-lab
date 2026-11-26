@@ -52,13 +52,13 @@
         "description": "Callback invoked when new value is being set.\n\nThe event `reason` is `'none'` for user-initiated changes, such as a click\nor keyboard navigation; `'initial'` for the first automatic selection or\nfallback in uncontrolled roots when `defaultValue` is omitted or\n`undefined`, including when the implicit initial value is disabled or\nmissing; `'disabled'` for automatic fallback when the selected tab becomes\ndisabled in uncontrolled roots; or `'missing'` for automatic fallback when\nthe selected tab is removed, or when an explicit `defaultValue` never\nmatches a mounted tab in uncontrolled roots.\n\nFor automatic changes, the selected value can be `null` when no enabled Tab\nis available as a fallback.\n\nAutomatic changes cannot be canceled; calling `eventDetails.cancel()` for\n`'initial'`, `'disabled'`, or `'missing'` has no effect."
       },
       {
-        "name": "children",
-        "type": "ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "ReactNode",
         "required": false
       },
       {
@@ -94,13 +94,13 @@
         "description": "Whether to loop keyboard focus back to the first item\nwhen the end of the list is reached while using the arrow keys."
       },
       {
-        "name": "children",
-        "type": "ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "ReactNode",
         "required": false
       },
       {
@@ -147,6 +147,11 @@
         "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (for example, `<div>`)."
       },
       {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
         "name": "children",
         "type": "ReactNode",
         "required": false
@@ -154,11 +159,6 @@
       {
         "name": "type",
         "type": "\"button\" | \"submit\" | \"reset\"",
-        "required": false
-      },
-      {
-        "name": "id",
-        "type": "string",
         "required": false
       },
       {
@@ -194,13 +194,13 @@
         "description": "Whether to keep the HTML element in the DOM while the panel is hidden."
       },
       {
-        "name": "children",
-        "type": "ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "ReactNode",
         "required": false
       },
       {

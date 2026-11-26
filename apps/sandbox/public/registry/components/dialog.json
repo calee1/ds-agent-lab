@@ -177,13 +177,13 @@
         "description": "A parent element to render the portal element into."
       },
       {
-        "name": "children",
-        "type": "React.ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "React.ReactNode",
         "required": false
       },
       {
@@ -213,6 +213,11 @@
         "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (for example, `<div>`)."
       },
       {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
         "name": "children",
         "type": "React.ReactNode",
         "required": false
@@ -230,11 +235,6 @@
       {
         "name": "value",
         "type": "string | number | readonly string[]",
-        "required": false
-      },
-      {
-        "name": "id",
-        "type": "string",
         "required": false
       },
       {
@@ -264,13 +264,13 @@
         "description": "Whether the backdrop is forced to render even when nested."
       },
       {
-        "name": "children",
-        "type": "React.ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "React.ReactNode",
         "required": false
       },
       {
@@ -306,13 +306,13 @@
         "description": "Determines the element to focus when the dialog is closed.\n\n- `false`: Do not move focus.\n- `true`: Move focus based on the default behavior (trigger or previously focused element).\n- `RefObject`: Move focus to the ref element.\n- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).\n  Return an element to focus, `true` to use the default behavior, `null` to fall back to the default behavior, or `false`/`undefined` to do nothing."
       },
       {
-        "name": "children",
-        "type": "React.ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "React.ReactNode",
         "required": false
       },
       {
@@ -390,13 +390,13 @@
     ],
     "DialogTitle": [
       {
-        "name": "children",
-        "type": "React.ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "React.ReactNode",
         "required": false
       },
       {
@@ -420,13 +420,13 @@
     ],
     "DialogDescription": [
       {
-        "name": "children",
-        "type": "React.ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "React.ReactNode",
         "required": false
       },
       {

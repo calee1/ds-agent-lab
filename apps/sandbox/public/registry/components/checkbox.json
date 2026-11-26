@@ -106,11 +106,6 @@
         "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `true` if the rendered element is a native button."
       },
       {
-        "name": "children",
-        "type": "ReactNode",
-        "required": false
-      },
-      {
         "name": "className",
         "type": "string | ((state: CheckboxRootState) => string | undefined)",
         "required": false,
@@ -121,6 +116,11 @@
         "type": "CSSProperties | ((state: CheckboxRootState) => React.CSSProperties | undefined)",
         "required": false,
         "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
       },
       {
         "name": "render",

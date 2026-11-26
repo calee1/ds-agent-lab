@@ -65,13 +65,13 @@
         "description": "The current value. The component is indeterminate when value is `null`."
       },
       {
-        "name": "children",
-        "type": "ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "ReactNode",
         "required": false
       },
       {
@@ -95,13 +95,13 @@
     ],
     "ProgressTrack": [
       {
-        "name": "children",
-        "type": "ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "ReactNode",
         "required": false
       },
       {
@@ -125,13 +125,13 @@
     ],
     "ProgressIndicator": [
       {
-        "name": "children",
-        "type": "ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "ReactNode",
         "required": false
       },
       {
@@ -155,13 +155,13 @@
     ],
     "ProgressLabel": [
       {
-        "name": "children",
-        "type": "ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "ReactNode",
         "required": false
       },
       {

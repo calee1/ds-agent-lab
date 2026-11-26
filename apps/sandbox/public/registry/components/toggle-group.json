@@ -1,0 +1,190 @@
+{
+  "name": "Toggle Group",
+  "slug": "toggle-group",
+  "file": "src/components/ui/toggle-group.tsx",
+  "install": "pnpm dlx shadcn@latest add toggle-group",
+  "import": "import { ToggleGroup, ToggleGroupItem } from \"@/components/ui/toggle-group\"",
+  "exports": [
+    "ToggleGroup",
+    "ToggleGroupItem"
+  ],
+  "slots": [
+    "toggle-group",
+    "toggle-group-item"
+  ],
+  "variants": {},
+  "defaultVariants": {},
+  "props": {
+    "ToggleGroup": [
+      {
+        "name": "value",
+        "type": "readonly string[]",
+        "required": false,
+        "description": "The pressed state of the toggle group represented by an array of\nthe values of all pressed toggle buttons.\nThis is the controlled counterpart of `defaultValue`."
+      },
+      {
+        "name": "defaultValue",
+        "type": "readonly string[]",
+        "required": false,
+        "description": "The pressed state of the toggle group represented by an array of\nthe values of all pressed toggle buttons.\nThis is the uncontrolled counterpart of `value`."
+      },
+      {
+        "name": "onValueChange",
+        "type": "(groupValue: string[], eventDetails: ToggleGroupPrimitive.ChangeEventDetails) => void",
+        "required": false,
+        "description": "Callback fired when the pressed states of the toggle group changes."
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the toggle group should ignore user interaction."
+      },
+      {
+        "name": "orientation",
+        "type": "\"horizontal\" | \"vertical\"",
+        "required": false
+      },
+      {
+        "name": "loopFocus",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether to loop keyboard focus back to the first item\nwhen the end of the list is reached while using the arrow keys."
+      },
+      {
+        "name": "multiple",
+        "type": "boolean",
+        "required": false,
+        "description": "When `false` only one item in the group can be pressed. If any item in\nthe group becomes pressed, the others will become unpressed.\nWhen `true` multiple items can be pressed."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: ToggleGroupState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToggleGroupState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "React.CSSProperties | ((state: ToggleGroupState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      },
+      {
+        "name": "variant",
+        "type": "\"default\" | \"outline\"",
+        "required": false
+      },
+      {
+        "name": "size",
+        "type": "\"default\" | \"sm\" | \"lg\"",
+        "required": false
+      },
+      {
+        "name": "spacing",
+        "type": "number",
+        "required": false
+      }
+    ],
+    "ToggleGroupItem": [
+      {
+        "name": "pressed",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the toggle button is currently pressed.\nThis is the controlled counterpart of `defaultPressed`."
+      },
+      {
+        "name": "defaultPressed",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the toggle button is currently pressed.\nThis is the uncontrolled counterpart of `pressed`."
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the component should ignore user interaction."
+      },
+      {
+        "name": "onPressedChange",
+        "type": "(pressed: boolean, eventDetails: TogglePrimitive.ChangeEventDetails) => void",
+        "required": false,
+        "description": "Callback fired when the pressed state is changed."
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": false,
+        "description": "A unique string that identifies the toggle when used\ninside a toggle group."
+      },
+      {
+        "name": "nativeButton",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (for example, `<div>`)."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "type",
+        "type": "\"button\" | \"submit\" | \"reset\"",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: ToggleState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToggleState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "React.CSSProperties | ((state: ToggleState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      },
+      {
+        "name": "variant",
+        "type": "\"default\" | \"outline\"",
+        "required": false
+      },
+      {
+        "name": "size",
+        "type": "\"default\" | \"sm\" | \"lg\"",
+        "required": false
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

@@ -1,0 +1,1183 @@
+{
+  "name": "Chart",
+  "slug": "chart",
+  "file": "src/components/ui/chart.tsx",
+  "install": "pnpm dlx shadcn@latest add chart",
+  "import": "import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent, ChartLegend, ChartLegendContent, ChartStyle } from \"@/components/ui/chart\"",
+  "exports": [
+    "ChartConfig",
+    "ChartContainer",
+    "ChartTooltip",
+    "ChartTooltipContent",
+    "ChartLegend",
+    "ChartLegendContent",
+    "ChartStyle"
+  ],
+  "slots": [
+    "chart"
+  ],
+  "variants": {},
+  "defaultVariants": {},
+  "props": {
+    "ChartContainer": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": true
+      },
+      {
+        "name": "config",
+        "type": "ChartConfig",
+        "required": true
+      },
+      {
+        "name": "initialDimension",
+        "type": "{ width: number; height: number; }",
+        "required": false
+      }
+    ],
+    "ChartTooltipContent": [
+      {
+        "name": "separator",
+        "type": "string",
+        "required": false,
+        "description": "The separator between name and value."
+      },
+      {
+        "name": "wrapperClassName",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "labelClassName",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "formatter",
+        "type": "Formatter<RechartsPrimitive.TooltipValueType, NameType> & ((value: RechartsPrimitive.TooltipValueType, name: NameType...",
+        "required": false,
+        "description": "Function to customize the value in the tooltip.\nIf you return an array, the first entry will be the formatted \"value\", and the second entry will be the formatted \"name\""
+      },
+      {
+        "name": "contentStyle",
+        "type": "React.CSSProperties",
+        "required": false,
+        "description": "The style of tooltip content which is a dom element."
+      },
+      {
+        "name": "itemStyle",
+        "type": "React.CSSProperties",
+        "required": false,
+        "description": "The style of default tooltip content item which is a li element."
+      },
+      {
+        "name": "labelStyle",
+        "type": "React.CSSProperties",
+        "required": false,
+        "description": "The style of default tooltip label which is a p element."
+      },
+      {
+        "name": "labelFormatter",
+        "type": "((label: React.ReactNode, payload: readonly RechartsPrimitive.TooltipPayloadEntry<RechartsPrimitive.TooltipValueType,...",
+        "required": false,
+        "description": "The formatter function of label in tooltip."
+      },
+      {
+        "name": "itemSorter",
+        "type": "RechartsPrimitive.TooltipItemSorter<RechartsPrimitive.TooltipValueType, NameType> & (RechartsPrimitive.TooltipItemSor...",
+        "required": false,
+        "description": "Sorts tooltip items.\nDefaults to 'name' which means it sorts alphabetically by graphical item `name` property."
+      },
+      {
+        "name": "active",
+        "type": "boolean",
+        "required": false,
+        "description": "If true, then Tooltip is always displayed, once an activeIndex is set by mouse over, or programmatically.\nIf false, then Tooltip is never displayed.\nIf undefined, Recharts will control when the Tooltip displays. This includes mouse and keyboard controls."
+      },
+      {
+        "name": "allowEscapeViewBox",
+        "type": "AllowInDimension",
+        "required": false,
+        "description": "This option allows the tooltip to extend beyond the viewBox of the chart itself."
+      },
+      {
+        "name": "animationDuration",
+        "type": "number",
+        "required": false,
+        "description": "Specifies the duration of animation, the unit of this option is ms."
+      },
+      {
+        "name": "animationEasing",
+        "type": "AnimationTiming",
+        "required": false,
+        "description": "The type of easing function."
+      },
+      {
+        "name": "axisId",
+        "type": "RechartsPrimitive.AxisId",
+        "required": false,
+        "description": "Tooltip always attaches itself to the \"Tooltip\" axis. Which axis is it? Depends on the layout:\n- horizontal layout -> X axis\n- vertical layout -> Y axis\n- radial layout -> radial axis\n- centric layout -> angle axis\n\nTooltip will use the default axis for the layout, unless you specify an axisId."
+      },
+      {
+        "name": "content",
+        "type": "ContentType<RechartsPrimitive.TooltipValueType, NameType> & string",
+        "required": false,
+        "description": "Renders the content of the tooltip.\n\nThis should return HTML elements, not SVG elements.\n\n- If not set, the  {@link  DefaultTooltipContent  }  component is used.\n- If set to a React element, this element will be cloned and extra props will be passed in.\n- If set to a function, the function will be called and should return HTML elements."
+      },
+      {
+        "name": "cursor",
+        "type": "CursorDefinition",
+        "required": false,
+        "description": "If set false, no cursor will be drawn when tooltip is active.\nIf set a object, the option is the configuration of cursor.\nIf set a React element, the option is the custom react element of drawing cursor."
+      },
+      {
+        "name": "defaultIndex",
+        "type": "string | number",
+        "required": false
+      },
+      {
+        "name": "filterNull",
+        "type": "boolean",
+        "required": false,
+        "description": "When an item of the payload has value null or undefined, this item won't be displayed."
+      },
+      {
+        "name": "includeHidden",
+        "type": "boolean",
+        "required": false,
+        "description": "If true, the tooltip will display information about hidden series.\nDefaults to false.\nInteracting with the hide property of Area, Bar, Line, Scatter."
+      },
+      {
+        "name": "isAnimationActive",
+        "type": "boolean | \"auto\"",
+        "required": false,
+        "description": "If set false, animation of tooltip will be disabled.\nIf set \"auto\", the animation will be disabled in SSR and will respect the user's prefers-reduced-motion system preference for accessibility."
+      },
+      {
+        "name": "offset",
+        "type": "number | RechartsPrimitive.Coordinate",
+        "required": false,
+        "description": "The offset size between the position of tooltip and the mouse cursor position.\nWhen a number is provided, the same offset is applied to both x and y axes.\n\nWhen a Coordinate object is provided, you can specify different offsets for each axis (x and y as numbers)"
+      },
+      {
+        "name": "payloadUniqBy",
+        "type": "UniqueOption<TooltipPayloadEntry>",
+        "required": false
+      },
+      {
+        "name": "portal",
+        "type": "HTMLElement",
+        "required": false,
+        "description": "If portal is defined, then Tooltip will use this element as a target\nfor rendering using React Portal: https://react.dev/reference/react-dom/createPortal\n\nIf this is undefined then Tooltip renders inside the recharts-wrapper element."
+      },
+      {
+        "name": "position",
+        "type": "Partial<RechartsPrimitive.Coordinate>",
+        "required": false,
+        "description": "If this field is set, the tooltip will be displayed at the specified position\nregardless of the mouse position.\n\nYou can set a single field (x or y) and let the other field be calculated automatically based\non the mouse position."
+      },
+      {
+        "name": "reverseDirection",
+        "type": "AllowInDimension",
+        "required": false
+      },
+      {
+        "name": "shared",
+        "type": "boolean",
+        "required": false,
+        "description": "Defines whether the tooltip is reacting to the current data point,\nor to all data points at the current axis coordinate.\n\n- `true`: tooltip will appear on top of all bars on an axis tick.\n- `false`: tooltip will appear on individual bars.\n\nDifferent chart types allow different modes, and have different defaults."
+      },
+      {
+        "name": "trigger",
+        "type": "TooltipTrigger",
+        "required": false,
+        "description": "If `hover` then the Tooltip shows on mouse enter and hides on mouse leave.\n\nIf `click` then the Tooltip shows after clicking and stays active."
+      },
+      {
+        "name": "useTranslate3d",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "wrapperStyle",
+        "type": "React.CSSProperties",
+        "required": false,
+        "description": "CSS styles to be applied to the wrapper `div` element."
+      },
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "hideLabel",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "hideIndicator",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "indicator",
+        "type": "\"line\" | \"dot\" | \"dashed\"",
+        "required": false
+      },
+      {
+        "name": "nameKey",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "labelKey",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "label",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "payload",
+        "type": "readonly RechartsPrimitive.TooltipPayloadEntry<RechartsPrimitive.TooltipValueType, TooltipNameType>[]",
+        "required": false
+      }
+    ],
+    "ChartLegendContent": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "dangerouslySetInnerHTML",
+        "type": "{ __html: string | TrustedHTML; } & { __html: string; }",
+        "required": false
+      },
+      {
+        "name": "onCopy",
+        "type": "React.ClipboardEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.ClipboardEvent<React.ReactElem...",
+        "required": false
+      },
+      {
+        "name": "onCopyCapture",
+        "type": "React.ClipboardEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.ClipboardEvent<React.ReactElem...",
+        "required": false
+      },
+      {
+        "name": "onCut",
+        "type": "React.ClipboardEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.ClipboardEvent<React.ReactElem...",
+        "required": false
+      },
+      {
+        "name": "onCutCapture",
+        "type": "React.ClipboardEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.ClipboardEvent<React.ReactElem...",
+        "required": false
+      },
+      {
+        "name": "onPaste",
+        "type": "React.ClipboardEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.ClipboardEvent<React.ReactElem...",
+        "required": false
+      },
+      {
+        "name": "onPasteCapture",
+        "type": "React.ClipboardEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.ClipboardEvent<React.ReactElem...",
+        "required": false
+      },
+      {
+        "name": "onCompositionEnd",
+        "type": "React.CompositionEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.CompositionEvent<React.React...",
+        "required": false
+      },
+      {
+        "name": "onCompositionEndCapture",
+        "type": "React.CompositionEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.CompositionEvent<React.React...",
+        "required": false
+      },
+      {
+        "name": "onCompositionStart",
+        "type": "React.CompositionEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.CompositionEvent<React.React...",
+        "required": false
+      },
+      {
+        "name": "onCompositionStartCapture",
+        "type": "React.CompositionEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.CompositionEvent<React.React...",
+        "required": false
+      },
+      {
+        "name": "onCompositionUpdate",
+        "type": "React.CompositionEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.CompositionEvent<React.React...",
+        "required": false
+      },
+      {
+        "name": "onCompositionUpdateCapture",
+        "type": "React.CompositionEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.CompositionEvent<React.React...",
+        "required": false
+      },
+      {
+        "name": "onFocus",
+        "type": "React.FocusEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.FocusEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onFocusCapture",
+        "type": "React.FocusEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.FocusEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onBlur",
+        "type": "React.FocusEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.FocusEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onBlurCapture",
+        "type": "React.FocusEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.FocusEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onChange",
+        "type": "React.ChangeEventHandler<HTMLDivElement, Element> & ((data: any, index: number, event: React.FormEvent<React.ReactEle...",
+        "required": false
+      },
+      {
+        "name": "onChangeCapture",
+        "type": "React.ChangeEventHandler<HTMLDivElement, Element> & ((data: any, index: number, event: React.FormEvent<React.ReactEle...",
+        "required": false
+      },
+      {
+        "name": "onBeforeInput",
+        "type": "React.InputEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.FormEvent<React.ReactElement<unkno...",
+        "required": false
+      },
+      {
+        "name": "onBeforeInputCapture",
+        "type": "React.InputEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.FormEvent<React.ReactElement<unkno...",
+        "required": false
+      },
+      {
+        "name": "onInput",
+        "type": "React.InputEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.FormEvent<React.ReactElement<unkno...",
+        "required": false
+      },
+      {
+        "name": "onInputCapture",
+        "type": "React.InputEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.FormEvent<React.ReactElement<unkno...",
+        "required": false
+      },
+      {
+        "name": "onReset",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.FormEvent<React.ReactElement<unkno...",
+        "required": false
+      },
+      {
+        "name": "onResetCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.FormEvent<React.ReactElement<unkno...",
+        "required": false
+      },
+      {
+        "name": "onSubmit",
+        "type": "React.SubmitEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.FormEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onSubmitCapture",
+        "type": "React.SubmitEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.FormEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onInvalid",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.FormEvent<React.ReactElement<unkno...",
+        "required": false
+      },
+      {
+        "name": "onInvalidCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.FormEvent<React.ReactElement<unkno...",
+        "required": false
+      },
+      {
+        "name": "onLoad",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onLoadCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onError",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onErrorCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onKeyDown",
+        "type": "React.KeyboardEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.KeyboardEvent<React.ReactElemen...",
+        "required": false
+      },
+      {
+        "name": "onKeyDownCapture",
+        "type": "React.KeyboardEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.KeyboardEvent<React.ReactElemen...",
+        "required": false
+      },
+      {
+        "name": "onKeyPress",
+        "type": "React.KeyboardEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.KeyboardEvent<React.ReactElemen...",
+        "required": false
+      },
+      {
+        "name": "onKeyPressCapture",
+        "type": "React.KeyboardEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.KeyboardEvent<React.ReactElemen...",
+        "required": false
+      },
+      {
+        "name": "onKeyUp",
+        "type": "React.KeyboardEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.KeyboardEvent<React.ReactElemen...",
+        "required": false
+      },
+      {
+        "name": "onKeyUpCapture",
+        "type": "React.KeyboardEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.KeyboardEvent<React.ReactElemen...",
+        "required": false
+      },
+      {
+        "name": "onAbort",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onAbortCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onCanPlay",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onCanPlayCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onCanPlayThrough",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onCanPlayThroughCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onDurationChange",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onDurationChangeCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onEmptied",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onEmptiedCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onEncrypted",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onEncryptedCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onEnded",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onEndedCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onLoadedData",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onLoadedDataCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onLoadedMetadata",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onLoadedMetadataCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onLoadStart",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onLoadStartCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPause",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPauseCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPlay",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPlayCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPlaying",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPlayingCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onProgress",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onProgressCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onRateChange",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onRateChangeCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onSeeked",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onSeekedCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onSeeking",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onSeekingCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onStalled",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onStalledCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onSuspend",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onSuspendCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onTimeUpdate",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onTimeUpdateCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onVolumeChange",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onVolumeChangeCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onWaiting",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onWaitingCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onAuxClick",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.MouseEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onAuxClickCapture",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.MouseEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onClick",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: RechartsPrimitive.LegendPayload, index: number, event: React.MouseE...",
+        "required": false,
+        "description": "The customized event handler of click on the items in this group"
+      },
+      {
+        "name": "onClickCapture",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.MouseEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onContextMenu",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.MouseEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onContextMenuCapture",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.MouseEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onDoubleClick",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.MouseEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onDoubleClickCapture",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.MouseEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onDrag",
+        "type": "React.DragEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.DragEvent<React.ReactElement<unknow...",
+        "required": false
+      },
+      {
+        "name": "onDragCapture",
+        "type": "React.DragEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.DragEvent<React.ReactElement<unknow...",
+        "required": false
+      },
+      {
+        "name": "onDragEnd",
+        "type": "React.DragEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.DragEvent<React.ReactElement<unknow...",
+        "required": false
+      },
+      {
+        "name": "onDragEndCapture",
+        "type": "React.DragEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.DragEvent<React.ReactElement<unknow...",
+        "required": false
+      },
+      {
+        "name": "onDragEnter",
+        "type": "React.DragEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.DragEvent<React.ReactElement<unknow...",
+        "required": false
+      },
+      {
+        "name": "onDragEnterCapture",
+        "type": "React.DragEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.DragEvent<React.ReactElement<unknow...",
+        "required": false
+      },
+      {
+        "name": "onDragExit",
+        "type": "React.DragEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.DragEvent<React.ReactElement<unknow...",
+        "required": false
+      },
+      {
+        "name": "onDragExitCapture",
+        "type": "React.DragEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.DragEvent<React.ReactElement<unknow...",
+        "required": false
+      },
+      {
+        "name": "onDragLeave",
+        "type": "React.DragEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.DragEvent<React.ReactElement<unknow...",
+        "required": false
+      },
+      {
+        "name": "onDragLeaveCapture",
+        "type": "React.DragEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.DragEvent<React.ReactElement<unknow...",
+        "required": false
+      },
+      {
+        "name": "onDragOver",
+        "type": "React.DragEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.DragEvent<React.ReactElement<unknow...",
+        "required": false
+      },
+      {
+        "name": "onDragOverCapture",
+        "type": "React.DragEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.DragEvent<React.ReactElement<unknow...",
+        "required": false
+      },
+      {
+        "name": "onDragStart",
+        "type": "React.DragEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.DragEvent<React.ReactElement<unknow...",
+        "required": false
+      },
+      {
+        "name": "onDragStartCapture",
+        "type": "React.DragEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.DragEvent<React.ReactElement<unknow...",
+        "required": false
+      },
+      {
+        "name": "onDrop",
+        "type": "React.DragEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.DragEvent<React.ReactElement<unknow...",
+        "required": false
+      },
+      {
+        "name": "onDropCapture",
+        "type": "React.DragEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.DragEvent<React.ReactElement<unknow...",
+        "required": false
+      },
+      {
+        "name": "onMouseDown",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.MouseEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onMouseDownCapture",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.MouseEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onMouseEnter",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: RechartsPrimitive.LegendPayload, index: number, event: React.MouseE...",
+        "required": false,
+        "description": "The customized event handler of mouseenter on the items in this group"
+      },
+      {
+        "name": "onMouseLeave",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: RechartsPrimitive.LegendPayload, index: number, event: React.MouseE...",
+        "required": false,
+        "description": "The customized event handler of mouseleave on the items in this group"
+      },
+      {
+        "name": "onMouseMove",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.MouseEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onMouseMoveCapture",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.MouseEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onMouseOut",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.MouseEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onMouseOutCapture",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.MouseEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onMouseOver",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.MouseEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onMouseOverCapture",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.MouseEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onMouseUp",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.MouseEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onMouseUpCapture",
+        "type": "React.MouseEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.MouseEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onSelect",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onSelectCapture",
+        "type": "React.ReactEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.SyntheticEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onTouchCancel",
+        "type": "React.TouchEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.TouchEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onTouchCancelCapture",
+        "type": "React.TouchEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.TouchEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onTouchEnd",
+        "type": "React.TouchEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.TouchEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onTouchEndCapture",
+        "type": "React.TouchEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.TouchEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onTouchMove",
+        "type": "React.TouchEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.TouchEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onTouchMoveCapture",
+        "type": "React.TouchEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.TouchEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onTouchStart",
+        "type": "React.TouchEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.TouchEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onTouchStartCapture",
+        "type": "React.TouchEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.TouchEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onPointerDown",
+        "type": "React.PointerEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.PointerEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPointerDownCapture",
+        "type": "React.PointerEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.PointerEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPointerMove",
+        "type": "React.PointerEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.PointerEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPointerMoveCapture",
+        "type": "React.PointerEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.PointerEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPointerUp",
+        "type": "React.PointerEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.PointerEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPointerUpCapture",
+        "type": "React.PointerEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.PointerEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPointerCancel",
+        "type": "React.PointerEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.PointerEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPointerCancelCapture",
+        "type": "React.PointerEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.PointerEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPointerEnter",
+        "type": "React.PointerEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.PointerEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPointerLeave",
+        "type": "React.PointerEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.PointerEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPointerOver",
+        "type": "React.PointerEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.PointerEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPointerOverCapture",
+        "type": "React.PointerEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.PointerEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPointerOut",
+        "type": "React.PointerEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.PointerEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onPointerOutCapture",
+        "type": "React.PointerEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.PointerEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onGotPointerCapture",
+        "type": "React.PointerEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.PointerEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onGotPointerCaptureCapture",
+        "type": "React.PointerEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.PointerEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onLostPointerCapture",
+        "type": "React.PointerEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.PointerEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onLostPointerCaptureCapture",
+        "type": "React.PointerEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.PointerEvent<React.ReactElement<...",
+        "required": false
+      },
+      {
+        "name": "onScroll",
+        "type": "React.UIEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.UIEvent<React.ReactElement<unknown, s...",
+        "required": false
+      },
+      {
+        "name": "onScrollCapture",
+        "type": "React.UIEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.UIEvent<React.ReactElement<unknown, s...",
+        "required": false
+      },
+      {
+        "name": "onWheel",
+        "type": "React.WheelEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.WheelEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onWheelCapture",
+        "type": "React.WheelEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.WheelEvent<React.ReactElement<unkn...",
+        "required": false
+      },
+      {
+        "name": "onAnimationStart",
+        "type": "React.AnimationEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.AnimationEvent<React.ReactElem...",
+        "required": false
+      },
+      {
+        "name": "onAnimationStartCapture",
+        "type": "React.AnimationEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.AnimationEvent<React.ReactElem...",
+        "required": false
+      },
+      {
+        "name": "onAnimationEnd",
+        "type": "React.AnimationEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.AnimationEvent<React.ReactElem...",
+        "required": false
+      },
+      {
+        "name": "onAnimationEndCapture",
+        "type": "React.AnimationEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.AnimationEvent<React.ReactElem...",
+        "required": false
+      },
+      {
+        "name": "onAnimationIteration",
+        "type": "React.AnimationEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.AnimationEvent<React.ReactElem...",
+        "required": false
+      },
+      {
+        "name": "onAnimationIterationCapture",
+        "type": "React.AnimationEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.AnimationEvent<React.ReactElem...",
+        "required": false
+      },
+      {
+        "name": "onTransitionEnd",
+        "type": "React.TransitionEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.TransitionEvent<React.ReactEl...",
+        "required": false
+      },
+      {
+        "name": "onTransitionEndCapture",
+        "type": "React.TransitionEventHandler<HTMLDivElement> & ((data: any, index: number, event: React.TransitionEvent<React.ReactEl...",
+        "required": false
+      },
+      {
+        "name": "hideIcon",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "nameKey",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "iconSize",
+        "type": "number",
+        "required": false,
+        "description": "The size of icon in each legend item."
+      },
+      {
+        "name": "iconType",
+        "type": "RechartsPrimitive.LegendType",
+        "required": false,
+        "description": "The type of icon in each legend item."
+      },
+      {
+        "name": "layout",
+        "type": "CartesianLayout",
+        "required": false,
+        "description": "The layout of legend items inside the legend container."
+      },
+      {
+        "name": "align",
+        "type": "HorizontalAlignmentType",
+        "required": false,
+        "description": "Horizontal alignment of the whole Legend container:\n\n- `left`: shows the Legend to the left of the chart, and chart width reduces automatically to make space for it.\n- `right` shows the Legend to the right of the chart, and chart width reduces automatically.\n- `center` shows the Legend in the middle of chart, and chart width remains unchanged.\n\nThe exact behavior changes depending on 'verticalAlign' prop."
+      },
+      {
+        "name": "verticalAlign",
+        "type": "VerticalAlignmentType",
+        "required": false,
+        "description": "Vertical alignment of the whole Legend container:\n\n- `bottom`: shows the Legend below chart, and chart height reduces automatically to make space for it.\n- `top`: shows the Legend above chart, and chart height reduces automatically.\n- `middle`:  shows the Legend in the middle of chart, covering other content, and chart height remains unchanged.\nThe exact behavior changes depending on `align` prop."
+      },
+      {
+        "name": "inactiveColor",
+        "type": "string",
+        "required": false,
+        "description": "The color of the icon when the item is inactive."
+      },
+      {
+        "name": "formatter",
+        "type": "Formatter",
+        "required": false,
+        "description": "Function to customize how content is serialized before rendering.\n\nThis should return HTML elements, or strings."
+      },
+      {
+        "name": "payload",
+        "type": "readonly RechartsPrimitive.LegendPayload[]",
+        "required": false,
+        "description": "DefaultLegendContent.payload is omitted from Legend props.\nA custom payload can be passed here if desired, or it can be passed from the Legend \"content\" callback."
+      },
+      {
+        "name": "labelStyle",
+        "type": "React.CSSProperties",
+        "required": false,
+        "description": "The style of each text label which is a span element."
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "onPointerEnterCapture",
+        "type": "(data: any, index: number, event: React.PointerEvent<React.ReactElement<unknown, string | React.JSXElementConstructor...",
+        "required": false
+      },
+      {
+        "name": "onPointerLeaveCapture",
+        "type": "(data: any, index: number, event: React.PointerEvent<React.ReactElement<unknown, string | React.JSXElementConstructor...",
+        "required": false
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

@@ -1,0 +1,115 @@
+{
+  "name": "Toggle",
+  "slug": "toggle",
+  "file": "src/components/ui/toggle.tsx",
+  "install": "pnpm dlx shadcn@latest add toggle",
+  "import": "import { Toggle } from \"@/components/ui/toggle\"",
+  "exports": [
+    "Toggle"
+  ],
+  "slots": [
+    "toggle"
+  ],
+  "variants": {
+    "variant": [
+      "default",
+      "outline"
+    ],
+    "size": [
+      "default",
+      "sm",
+      "lg"
+    ]
+  },
+  "defaultVariants": {
+    "variant": "default",
+    "size": "default"
+  },
+  "props": {
+    "Toggle": [
+      {
+        "name": "pressed",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the toggle button is currently pressed.\nThis is the controlled counterpart of `defaultPressed`."
+      },
+      {
+        "name": "defaultPressed",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the toggle button is currently pressed.\nThis is the uncontrolled counterpart of `pressed`."
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the component should ignore user interaction."
+      },
+      {
+        "name": "onPressedChange",
+        "type": "(pressed: boolean, eventDetails: TogglePrimitive.ChangeEventDetails) => void",
+        "required": false,
+        "description": "Callback fired when the pressed state is changed."
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": false,
+        "description": "A unique string that identifies the toggle when used\ninside a toggle group."
+      },
+      {
+        "name": "nativeButton",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (for example, `<div>`)."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
+      },
+      {
+        "name": "type",
+        "type": "\"button\" | \"submit\" | \"reset\"",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: ToggleState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ToggleState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties | ((state: ToggleState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      },
+      {
+        "name": "variant",
+        "type": "\"default\" | \"outline\"",
+        "required": false
+      },
+      {
+        "name": "size",
+        "type": "\"default\" | \"sm\" | \"lg\"",
+        "required": false
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

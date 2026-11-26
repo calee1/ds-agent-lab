@@ -1,0 +1,18 @@
+{
+  "name": "Direction",
+  "slug": "direction",
+  "file": "src/components/ui/direction.tsx",
+  "install": "pnpm dlx shadcn@latest add direction",
+  "import": "import { DirectionProvider } from \"@/components/ui/direction\"",
+  "exports": [
+    "DirectionProvider"
+  ],
+  "slots": [],
+  "variants": {},
+  "defaultVariants": {},
+  "props": {},
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

@@ -21,13 +21,13 @@
         "description": "The orientation of the separator."
       },
       {
-        "name": "children",
-        "type": "ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "ReactNode",
         "required": false
       },
       {

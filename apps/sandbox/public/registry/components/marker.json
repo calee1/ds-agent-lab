@@ -1,0 +1,107 @@
+{
+  "name": "Marker",
+  "slug": "marker",
+  "file": "src/components/ui/marker.tsx",
+  "install": "pnpm dlx shadcn@latest add marker",
+  "import": "import { Marker, MarkerIcon, MarkerContent } from \"@/components/ui/marker\"",
+  "exports": [
+    "Marker",
+    "MarkerIcon",
+    "MarkerContent"
+  ],
+  "slots": [
+    "marker-icon",
+    "marker-content"
+  ],
+  "variants": {
+    "variant": [
+      "default",
+      "separator",
+      "border"
+    ]
+  },
+  "defaultVariants": {},
+  "props": {
+    "Marker": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, {}>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "variant",
+        "type": "\"default\" | \"separator\" | \"border\"",
+        "required": false
+      }
+    ],
+    "MarkerIcon": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "MarkerContent": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

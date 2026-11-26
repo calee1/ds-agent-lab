@@ -55,6 +55,12 @@
         "description": "A handle to associate the alert dialog with a trigger.\nIf specified, allows external triggers to control the alert dialog's open state.\nCan be created with the AlertDialog.createHandle() method."
       },
       {
+        "name": "children",
+        "type": "React.ReactNode | PayloadChildRenderFunction<unknown>",
+        "required": false,
+        "description": "The content of the dialog.\nThis can be a regular React node or a render function that receives the `payload` of the active trigger."
+      },
+      {
         "name": "open",
         "type": "boolean",
         "required": false,
@@ -71,12 +77,6 @@
         "type": "(open: boolean) => void",
         "required": false,
         "description": "Event handler called after any animations complete when the dialog is opened or closed."
-      },
-      {
-        "name": "children",
-        "type": "React.ReactNode | PayloadChildRenderFunction<unknown>",
-        "required": false,
-        "description": "The content of the dialog.\nThis can be a regular React node or a render function that receives the `payload` of the active trigger."
       },
       {
         "name": "triggerId",
@@ -99,11 +99,6 @@
         "description": "A handle to associate the trigger with an alert dialog.\nCan be created with the AlertDialog.createHandle() method."
       },
       {
-        "name": "children",
-        "type": "React.ReactNode",
-        "required": false
-      },
-      {
         "name": "className",
         "type": "string | ((state: DialogTriggerState) => string | undefined)",
         "required": false,
@@ -114,6 +109,17 @@
         "type": "React.CSSProperties | ((state: DialogTriggerState) => React.CSSProperties | undefined)",
         "required": false,
         "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "ID of the trigger. In addition to being forwarded to the rendered element,\nit is also used to specify the active trigger for the dialog in controlled mode (with the DialogRoot `triggerId` prop)."
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
       },
       {
         "name": "disabled",
@@ -129,12 +135,6 @@
         "name": "value",
         "type": "string | number | readonly string[]",
         "required": false
-      },
-      {
-        "name": "id",
-        "type": "string",
-        "required": false,
-        "description": "ID of the trigger. In addition to being forwarded to the rendered element,\nit is also used to specify the active trigger for the dialog in controlled mode (with the DialogRoot `triggerId` prop)."
       },
       {
         "name": "payload",
@@ -169,13 +169,13 @@
         "description": "A parent element to render the portal element into."
       },
       {
-        "name": "children",
-        "type": "React.ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "React.ReactNode",
         "required": false
       },
       {
@@ -205,13 +205,13 @@
         "description": "Whether the backdrop is forced to render even when nested."
       },
       {
-        "name": "children",
-        "type": "React.ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "React.ReactNode",
         "required": false
       },
       {
@@ -247,13 +247,13 @@
         "description": "Determines the element to focus when the dialog is closed.\n\n- `false`: Do not move focus.\n- `true`: Move focus based on the default behavior (trigger or previously focused element).\n- `RefObject`: Move focus to the ref element.\n- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).\n  Return an element to focus, `true` to use the default behavior, `null` to fall back to the default behavior, or `false`/`undefined` to do nothing."
       },
       {
-        "name": "children",
-        "type": "React.ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "React.ReactNode",
         "required": false
       },
       {
@@ -348,11 +348,6 @@
     ],
     "AlertDialogTitle": [
       {
-        "name": "children",
-        "type": "React.ReactNode",
-        "required": false
-      },
-      {
         "name": "className",
         "type": "string | ((state: AlertDialogTitleState) => string | undefined)",
         "required": false,
@@ -370,6 +365,11 @@
         "required": false
       },
       {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
         "name": "render",
         "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, AlertDialogTitl...",
         "required": false,
@@ -377,11 +377,6 @@
       }
     ],
     "AlertDialogDescription": [
-      {
-        "name": "children",
-        "type": "React.ReactNode",
-        "required": false
-      },
       {
         "name": "className",
         "type": "string | ((state: AlertDialogDescriptionState) => string | undefined)",
@@ -397,6 +392,11 @@
       {
         "name": "id",
         "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
         "required": false
       },
       {
@@ -420,6 +420,11 @@
         "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (for example, `<div>`)."
       },
       {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
         "name": "children",
         "type": "React.ReactNode",
         "required": false
@@ -437,11 +442,6 @@
       {
         "name": "value",
         "type": "string | number | readonly string[]",
-        "required": false
-      },
-      {
-        "name": "id",
-        "type": "string",
         "required": false
       },
       {
@@ -481,6 +481,11 @@
         "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (for example, `<div>`)."
       },
       {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
         "name": "children",
         "type": "React.ReactNode",
         "required": false
@@ -498,11 +503,6 @@
       {
         "name": "value",
         "type": "string | number | readonly string[]",
-        "required": false
-      },
-      {
-        "name": "id",
-        "type": "string",
         "required": false
       },
       {
