@@ -2,9 +2,11 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
+@import "@fontsource-variable/nunito";
 
 @custom-variant dark (&:is(.dark *));
 
 @import "./styles/foundations.css";
 @import "./styles/skins/default.css";
 @import "./styles/skins/wireframe.css";
+@import "./styles/skins/branded.css";

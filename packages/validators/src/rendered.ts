@@ -15,9 +15,9 @@ export const VIEWPORTS = [
   { name: "desktop", width: 1280, height: 800 },
 ] as const
 export const MODES = ["light", "dark"] as const
-export const SKINS = ["default", "wireframe"] as const
-/** All skin × mode combos, e.g. "default-light", "wireframe-dark" */
-export const THEMES = SKINS.flatMap((skin) => MODES.map((mode) => `${skin}-${mode}`)) as unknown as readonly string[]
+export const SKINS = ["default", "wireframe", "branded"] as const
+/** Supported skin × mode combos — wireframe is light-only */
+export const THEMES = ["default-light", "default-dark", "wireframe-light", "branded-light", "branded-dark"] as const as unknown as readonly string[]
 
 export type RenderedResult = { violations: Violation[]; screenshots: string[] }
 

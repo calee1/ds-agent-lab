@@ -12,7 +12,7 @@ function resolve(pathname: string) {
   return loader ? lazy(loader) : null
 }
 
-type Skin = "default" | "wireframe"
+type Skin = "default" | "wireframe" | "branded"
 type Mode = "light" | "dark"
 
 function useSkinSwitcher() {
@@ -48,7 +48,7 @@ function SkinSwitcher({ skin, setSkin, mode, setMode }: {
       }}
       aria-label="Skin switcher"
     >
-      {(["default", "wireframe"] as Skin[]).map((s) => (
+      {(["default", "wireframe", "branded"] as Skin[]).map((s) => (
         <button
           key={s}
           onClick={() => setSkin(s)}
