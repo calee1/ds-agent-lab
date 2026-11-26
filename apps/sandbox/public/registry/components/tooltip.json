@@ -156,6 +156,11 @@
         "description": "If `true`, the tooltip will not open when interacting with this trigger.\nNote that this doesn't apply the `disabled` attribute to the trigger element.\nIf you want to disable the trigger element itself, you can pass the `disabled` prop to the trigger element via the `render` prop."
       },
       {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
         "name": "children",
         "type": "ReactNode",
         "required": false
@@ -168,11 +173,6 @@
       {
         "name": "value",
         "type": "string | number | readonly string[]",
-        "required": false
-      },
-      {
-        "name": "id",
-        "type": "string",
         "required": false
       },
       {
@@ -196,13 +196,13 @@
     ],
     "TooltipContent": [
       {
-        "name": "children",
-        "type": "ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "ReactNode",
         "required": false
       },
       {
@@ -230,12 +230,6 @@
         "description": "How to align the popup relative to the specified side."
       },
       {
-        "name": "alignOffset",
-        "type": "number | OffsetFunction",
-        "required": false,
-        "description": "Additional offset along the alignment axis in pixels.\nAlso accepts a function that returns the offset to read the dimensions of the anchor\nand positioner elements, along with its side and alignment.\n\nThe function takes a `data` object parameter with the following properties:\n- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.\n- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.\n- `data.side`: which side of the anchor element the positioner is aligned against.\n- `data.align`: how the positioner is aligned relative to the specified side."
-      },
-      {
         "name": "side",
         "type": "Side",
         "required": false,
@@ -246,6 +240,12 @@
         "type": "number | OffsetFunction",
         "required": false,
         "description": "Distance between the anchor and the popup in pixels.\nAlso accepts a function that returns the distance to read the dimensions of the anchor\nand positioner elements, along with its side and alignment.\n\nThe function takes a `data` object parameter with the following properties:\n- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.\n- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.\n- `data.side`: which side of the anchor element the positioner is aligned against.\n- `data.align`: how the positioner is aligned relative to the specified side."
+      },
+      {
+        "name": "alignOffset",
+        "type": "number | OffsetFunction",
+        "required": false,
+        "description": "Additional offset along the alignment axis in pixels.\nAlso accepts a function that returns the offset to read the dimensions of the anchor\nand positioner elements, along with its side and alignment.\n\nThe function takes a `data` object parameter with the following properties:\n- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.\n- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.\n- `data.side`: which side of the anchor element the positioner is aligned against.\n- `data.align`: how the positioner is aligned relative to the specified side."
       }
     ]
   },

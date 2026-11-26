@@ -1,0 +1,103 @@
+{
+  "name": "Scroll Area",
+  "slug": "scroll-area",
+  "file": "src/components/ui/scroll-area.tsx",
+  "install": "pnpm dlx shadcn@latest add scroll-area",
+  "import": "import { ScrollArea, ScrollBar } from \"@/components/ui/scroll-area\"",
+  "exports": [
+    "ScrollArea",
+    "ScrollBar"
+  ],
+  "slots": [
+    "scroll-area",
+    "scroll-area-viewport",
+    "scroll-area-scrollbar",
+    "scroll-area-thumb"
+  ],
+  "variants": {},
+  "defaultVariants": {},
+  "props": {
+    "ScrollArea": [
+      {
+        "name": "overflowEdgeThreshold",
+        "type": "number | Partial<{ xStart: number; xEnd: number; yStart: number; yEnd: number; }>",
+        "required": false,
+        "description": "The threshold in pixels that must be passed before the overflow edge attributes are applied.\nAccepts a single number for all edges or an object to configure them individually."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: ScrollAreaRootState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ScrollAreaRootS...",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "React.CSSProperties | ((state: ScrollAreaRootState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      }
+    ],
+    "ScrollBar": [
+      {
+        "name": "orientation",
+        "type": "\"horizontal\" | \"vertical\"",
+        "required": false,
+        "description": "Whether the scrollbar controls vertical or horizontal scroll."
+      },
+      {
+        "name": "keepMounted",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether to keep the HTML element in the DOM when the viewport isn't scrollable."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: ScrollAreaScrollbarState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ScrollAreaScrol...",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "React.CSSProperties | ((state: ScrollAreaScrollbarState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

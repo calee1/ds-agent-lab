@@ -1,0 +1,836 @@
+{
+  "name": "Sidebar",
+  "slug": "sidebar",
+  "file": "src/components/ui/sidebar.tsx",
+  "install": "pnpm dlx shadcn@latest add sidebar",
+  "import": "import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarInput, SidebarInset, SidebarMenu, SidebarMenuAction, SidebarMenuBadge, SidebarMenuButton, SidebarMenuItem, SidebarMenuSkeleton, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem, SidebarProvider, SidebarRail, SidebarSeparator, SidebarTrigger } from \"@/components/ui/sidebar\"",
+  "exports": [
+    "Sidebar",
+    "SidebarContent",
+    "SidebarFooter",
+    "SidebarGroup",
+    "SidebarGroupAction",
+    "SidebarGroupContent",
+    "SidebarGroupLabel",
+    "SidebarHeader",
+    "SidebarInput",
+    "SidebarInset",
+    "SidebarMenu",
+    "SidebarMenuAction",
+    "SidebarMenuBadge",
+    "SidebarMenuButton",
+    "SidebarMenuItem",
+    "SidebarMenuSkeleton",
+    "SidebarMenuSub",
+    "SidebarMenuSubButton",
+    "SidebarMenuSubItem",
+    "SidebarProvider",
+    "SidebarRail",
+    "SidebarSeparator",
+    "SidebarTrigger"
+  ],
+  "slots": [
+    "sidebar-wrapper",
+    "sidebar",
+    "sidebar-gap",
+    "sidebar-container",
+    "sidebar-inner",
+    "sidebar-trigger",
+    "sidebar-rail",
+    "sidebar-inset",
+    "sidebar-input",
+    "sidebar-header",
+    "sidebar-footer",
+    "sidebar-separator",
+    "sidebar-content",
+    "sidebar-group",
+    "sidebar-group-content",
+    "sidebar-menu",
+    "sidebar-menu-item",
+    "sidebar-menu-badge",
+    "sidebar-menu-skeleton",
+    "sidebar-menu-sub",
+    "sidebar-menu-sub-item"
+  ],
+  "variants": {
+    "variant": [
+      "default",
+      "outline"
+    ],
+    "size": [
+      "default",
+      "sm",
+      "lg"
+    ]
+  },
+  "defaultVariants": {
+    "variant": "default",
+    "size": "default"
+  },
+  "props": {
+    "SidebarProvider": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "defaultOpen",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "open",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "onOpenChange",
+        "type": "(open: boolean) => void",
+        "required": false
+      }
+    ],
+    "Sidebar": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "side",
+        "type": "\"left\" | \"right\"",
+        "required": false
+      },
+      {
+        "name": "variant",
+        "type": "\"sidebar\" | \"floating\" | \"inset\"",
+        "required": false
+      },
+      {
+        "name": "collapsible",
+        "type": "\"none\" | \"icon\" | \"offcanvas\"",
+        "required": false
+      }
+    ],
+    "SidebarTrigger": [
+      {
+        "name": "focusableWhenDisabled",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the button should be focusable when disabled."
+      },
+      {
+        "name": "nativeButton",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (for example, `<div>`)."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "type",
+        "type": "\"button\" | \"submit\" | \"reset\"",
+        "required": false
+      },
+      {
+        "name": "value",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: ButtonState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ButtonState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "React.CSSProperties | ((state: ButtonState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      },
+      {
+        "name": "variant",
+        "type": "\"link\" | \"default\" | \"outline\" | \"secondary\" | \"ghost\" | \"destructive\"",
+        "required": false
+      },
+      {
+        "name": "size",
+        "type": "\"default\" | \"sm\" | \"xs\" | \"lg\" | \"icon\" | \"icon-xs\" | \"icon-sm\" | \"icon-lg\"",
+        "required": false
+      }
+    ],
+    "SidebarRail": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "type",
+        "type": "\"button\" | \"submit\" | \"reset\"",
+        "required": false
+      },
+      {
+        "name": "value",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "SidebarInset": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "SidebarInput": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "type",
+        "type": "React.HTMLInputTypeAttribute",
+        "required": false
+      },
+      {
+        "name": "value",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "SidebarHeader": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "SidebarFooter": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "SidebarSeparator": [
+      {
+        "name": "orientation",
+        "type": "Orientation",
+        "required": false,
+        "description": "The orientation of the separator."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: SeparatorState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SeparatorState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "React.CSSProperties | ((state: SeparatorState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      }
+    ],
+    "SidebarContent": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "SidebarGroup": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "SidebarGroupLabel": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, {}>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      }
+    ],
+    "SidebarGroupAction": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "type",
+        "type": "\"button\" | \"submit\" | \"reset\"",
+        "required": false
+      },
+      {
+        "name": "value",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, {}>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      }
+    ],
+    "SidebarGroupContent": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "SidebarMenu": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "SidebarMenuItem": [
+      {
+        "name": "value",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "SidebarMenuButton": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "type",
+        "type": "\"button\" | \"submit\" | \"reset\"",
+        "required": false
+      },
+      {
+        "name": "value",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, {}>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "isActive",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "tooltip",
+        "type": "string | (TooltipPopupProps & Pick<TooltipPositionerProps, \"align\" | \"side\" | \"sideOffset\" | \"alignOffset\">)",
+        "required": false
+      },
+      {
+        "name": "variant",
+        "type": "\"default\" | \"outline\"",
+        "required": false
+      },
+      {
+        "name": "size",
+        "type": "\"default\" | \"sm\" | \"lg\"",
+        "required": false
+      }
+    ],
+    "SidebarMenuAction": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "type",
+        "type": "\"button\" | \"submit\" | \"reset\"",
+        "required": false
+      },
+      {
+        "name": "value",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, {}>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "showOnHover",
+        "type": "boolean",
+        "required": false
+      }
+    ],
+    "SidebarMenuBadge": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "SidebarMenuSkeleton": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "showIcon",
+        "type": "boolean",
+        "required": false
+      }
+    ],
+    "SidebarMenuSub": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "SidebarMenuSubItem": [
+      {
+        "name": "value",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "SidebarMenuSubButton": [
+      {
+        "name": "type",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, {}>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "size",
+        "type": "\"sm\" | \"md\"",
+        "required": false
+      },
+      {
+        "name": "isActive",
+        "type": "boolean",
+        "required": false
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

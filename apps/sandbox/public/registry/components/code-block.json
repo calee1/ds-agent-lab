@@ -1,0 +1,297 @@
+{
+  "name": "Code Block",
+  "slug": "code-block",
+  "file": "src/components/ui/code-block.tsx",
+  "install": "pnpm dlx shadcn@latest add code-block",
+  "import": "import { CodeBlock, CodeBlockHeader, CodeBlockTitle, CodeBlockActions, CodeBlockCopyButton, CodeBlockContent, CodeBlockLine, CodeBlockFooter } from \"@/components/ui/code-block\"",
+  "exports": [
+    "CodeBlock",
+    "CodeBlockHeader",
+    "CodeBlockTitle",
+    "CodeBlockActions",
+    "CodeBlockCopyButton",
+    "CodeBlockContent",
+    "CodeBlockLine",
+    "CodeBlockFooter"
+  ],
+  "slots": [
+    "code-block",
+    "code-block-header",
+    "code-block-title",
+    "code-block-actions",
+    "code-block-copy-button",
+    "code-block-content",
+    "code-block-code",
+    "code-block-line",
+    "code-block-line-content",
+    "code-block-footer"
+  ],
+  "variants": {
+    "variant": [
+      "default",
+      "added",
+      "removed",
+      "highlighted"
+    ]
+  },
+  "defaultVariants": {
+    "variant": "default"
+  },
+  "props": {
+    "CodeBlock": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "variant",
+        "type": "\"default\" | \"destructive\"",
+        "required": false
+      },
+      {
+        "name": "size",
+        "type": "\"default\" | \"sm\"",
+        "required": false
+      }
+    ],
+    "CodeBlockHeader": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "CodeBlockTitle": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "CodeBlockActions": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "CodeBlockCopyButton": [
+      {
+        "name": "focusableWhenDisabled",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the button should be focusable when disabled."
+      },
+      {
+        "name": "nativeButton",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (for example, `<div>`)."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "type",
+        "type": "\"button\" | \"submit\" | \"reset\"",
+        "required": false
+      },
+      {
+        "name": "value",
+        "type": "string | (readonly string[] & string)",
+        "required": true
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: ButtonState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ButtonState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "React.CSSProperties | ((state: ButtonState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      },
+      {
+        "name": "variant",
+        "type": "\"link\" | \"default\" | \"outline\" | \"secondary\" | \"ghost\" | \"destructive\"",
+        "required": false
+      },
+      {
+        "name": "size",
+        "type": "\"default\" | \"sm\" | \"xs\" | \"lg\" | \"icon\" | \"icon-xs\" | \"icon-sm\" | \"icon-lg\"",
+        "required": false
+      }
+    ],
+    "CodeBlockContent": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "wrap",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "lineNumbers",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "startLine",
+        "type": "number",
+        "required": false
+      }
+    ],
+    "CodeBlockLine": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "variant",
+        "type": "\"default\" | \"added\" | \"removed\" | \"highlighted\"",
+        "required": false
+      }
+    ],
+    "CodeBlockFooter": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

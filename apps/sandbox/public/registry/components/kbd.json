@@ -1,0 +1,67 @@
+{
+  "name": "Kbd",
+  "slug": "kbd",
+  "file": "src/components/ui/kbd.tsx",
+  "install": "pnpm dlx shadcn@latest add kbd",
+  "import": "import { Kbd, KbdGroup } from \"@/components/ui/kbd\"",
+  "exports": [
+    "Kbd",
+    "KbdGroup"
+  ],
+  "slots": [
+    "kbd",
+    "kbd-group"
+  ],
+  "variants": {},
+  "defaultVariants": {},
+  "props": {
+    "Kbd": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
+      }
+    ],
+    "KbdGroup": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

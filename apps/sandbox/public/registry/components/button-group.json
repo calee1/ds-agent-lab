@@ -1,0 +1,122 @@
+{
+  "name": "Button Group",
+  "slug": "button-group",
+  "file": "src/components/ui/button-group.tsx",
+  "install": "pnpm dlx shadcn@latest add button-group",
+  "import": "import { ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from \"@/components/ui/button-group\"",
+  "exports": [
+    "ButtonGroup",
+    "ButtonGroupSeparator",
+    "ButtonGroupText"
+  ],
+  "slots": [
+    "button-group",
+    "button-group-separator"
+  ],
+  "variants": {
+    "orientation": [
+      "horizontal",
+      "vertical"
+    ]
+  },
+  "defaultVariants": {
+    "orientation": "horizontal"
+  },
+  "props": {
+    "ButtonGroup": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
+      },
+      {
+        "name": "orientation",
+        "type": "\"horizontal\" | \"vertical\"",
+        "required": false
+      }
+    ],
+    "ButtonGroupText": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
+      },
+      {
+        "name": "render",
+        "type": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, {}>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      }
+    ],
+    "ButtonGroupSeparator": [
+      {
+        "name": "orientation",
+        "type": "Orientation",
+        "required": false,
+        "description": "The orientation of the separator."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: SeparatorState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SeparatorState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties | ((state: SeparatorState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

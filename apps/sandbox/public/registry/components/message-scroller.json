@@ -1,0 +1,232 @@
+{
+  "name": "Message Scroller",
+  "slug": "message-scroller",
+  "file": "src/components/ui/message-scroller.tsx",
+  "install": "pnpm dlx shadcn@latest add message-scroller",
+  "import": "import { MessageScrollerProvider, MessageScroller, MessageScrollerViewport, MessageScrollerContent, MessageScrollerItem, MessageScrollerButton } from \"@/components/ui/message-scroller\"",
+  "exports": [
+    "MessageScrollerProvider",
+    "MessageScroller",
+    "MessageScrollerViewport",
+    "MessageScrollerContent",
+    "MessageScrollerItem",
+    "MessageScrollerButton"
+  ],
+  "slots": [
+    "message-scroller",
+    "message-scroller-viewport",
+    "message-scroller-content",
+    "message-scroller-item",
+    "message-scroller-button"
+  ],
+  "variants": {},
+  "defaultVariants": {},
+  "props": {
+    "MessageScrollerProvider": [
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "autoScroll",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "defaultScrollPosition",
+        "type": "MessageScrollerDefaultScrollPosition",
+        "required": false
+      },
+      {
+        "name": "scrollEdgeThreshold",
+        "type": "number",
+        "required": false
+      },
+      {
+        "name": "scrollPreviousItemPeek",
+        "type": "number",
+        "required": false
+      },
+      {
+        "name": "scrollMargin",
+        "type": "number",
+        "required": false
+      }
+    ],
+    "MessageScroller": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "MessageScrollerViewport": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "preserveScrollOnPrepend",
+        "type": "boolean",
+        "required": false
+      }
+    ],
+    "MessageScrollerContent": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "spacerClassName",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "MessageScrollerItem": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "messageId",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "scrollAnchor",
+        "type": "boolean",
+        "required": false
+      }
+    ],
+    "MessageScrollerButton": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "type",
+        "type": "\"button\" | \"submit\" | \"reset\"",
+        "required": false
+      },
+      {
+        "name": "value",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ((props: Record<string, unknown>, state: { a...",
+        "required": false
+      },
+      {
+        "name": "behavior",
+        "type": "ScrollBehavior",
+        "required": false
+      },
+      {
+        "name": "direction",
+        "type": "\"start\" | \"end\"",
+        "required": false
+      },
+      {
+        "name": "variant",
+        "type": "\"link\" | \"default\" | \"outline\" | \"secondary\" | \"ghost\" | \"destructive\"",
+        "required": false
+      },
+      {
+        "name": "size",
+        "type": "\"default\" | \"sm\" | \"xs\" | \"lg\" | \"icon\" | \"icon-xs\" | \"icon-sm\" | \"icon-lg\"",
+        "required": false
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Spinner",
+  "slug": "spinner",
+  "file": "src/components/ui/spinner.tsx",
+  "install": "pnpm dlx shadcn@latest add spinner",
+  "import": "import { Spinner } from \"@/components/ui/spinner\"",
+  "exports": [
+    "Spinner"
+  ],
+  "slots": [
+    "spinner"
+  ],
+  "variants": {},
+  "defaultVariants": {},
+  "props": {
+    "Spinner": [
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

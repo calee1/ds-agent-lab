@@ -1,0 +1,162 @@
+{
+  "name": "Bubble",
+  "slug": "bubble",
+  "file": "src/components/ui/bubble.tsx",
+  "install": "pnpm dlx shadcn@latest add bubble",
+  "import": "import { BubbleGroup, Bubble, BubbleContent, BubbleReactions } from \"@/components/ui/bubble\"",
+  "exports": [
+    "BubbleGroup",
+    "Bubble",
+    "BubbleContent",
+    "BubbleReactions"
+  ],
+  "slots": [
+    "bubble-group",
+    "bubble",
+    "bubble-reactions"
+  ],
+  "variants": {
+    "variant": [
+      "default",
+      "secondary",
+      "muted",
+      "tinted",
+      "outline",
+      "ghost",
+      "destructive"
+    ],
+    "side": [
+      "top",
+      "bottom"
+    ],
+    "align": [
+      "start",
+      "end"
+    ]
+  },
+  "defaultVariants": {
+    "variant": "default",
+    "side": "bottom",
+    "align": "end"
+  },
+  "props": {
+    "BubbleGroup": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "Bubble": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "variant",
+        "type": "\"default\" | \"outline\" | \"secondary\" | \"ghost\" | \"destructive\" | \"muted\" | \"tinted\"",
+        "required": false
+      },
+      {
+        "name": "align",
+        "type": "\"start\" | \"end\"",
+        "required": false
+      }
+    ],
+    "BubbleContent": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, {}>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      }
+    ],
+    "BubbleReactions": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "align",
+        "type": "\"start\" | \"end\"",
+        "required": false
+      },
+      {
+        "name": "side",
+        "type": "\"top\" | \"bottom\"",
+        "required": false
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

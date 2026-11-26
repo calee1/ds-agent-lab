@@ -1,0 +1,266 @@
+{
+  "name": "Input Group",
+  "slug": "input-group",
+  "file": "src/components/ui/input-group.tsx",
+  "install": "pnpm dlx shadcn@latest add input-group",
+  "import": "import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupText, InputGroupInput, InputGroupTextarea } from \"@/components/ui/input-group\"",
+  "exports": [
+    "InputGroup",
+    "InputGroupAddon",
+    "InputGroupButton",
+    "InputGroupText",
+    "InputGroupInput",
+    "InputGroupTextarea"
+  ],
+  "slots": [
+    "input-group",
+    "input-group-addon",
+    "input-group-control"
+  ],
+  "variants": {
+    "align": [
+      "inline-start",
+      "inline-end",
+      "block-start",
+      "block-end"
+    ],
+    "size": [
+      "xs",
+      "sm",
+      "icon-xs",
+      "icon-sm"
+    ]
+  },
+  "defaultVariants": {
+    "align": "inline-start",
+    "size": "xs"
+  },
+  "props": {
+    "InputGroup": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "InputGroupAddon": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "align",
+        "type": "\"inline-end\" | \"inline-start\" | \"block-start\" | \"block-end\"",
+        "required": false
+      }
+    ],
+    "InputGroupButton": [
+      {
+        "name": "className",
+        "type": "string | ((state: ButtonState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "style",
+        "type": "React.CSSProperties | ((state: ButtonState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "value",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "nativeButton",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (for example, `<div>`)."
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, ButtonState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "variant",
+        "type": "\"link\" | \"default\" | \"outline\" | \"secondary\" | \"ghost\" | \"destructive\"",
+        "required": false
+      },
+      {
+        "name": "focusableWhenDisabled",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the button should be focusable when disabled."
+      },
+      {
+        "name": "size",
+        "type": "\"sm\" | \"xs\" | \"icon-xs\" | \"icon-sm\"",
+        "required": false
+      },
+      {
+        "name": "type",
+        "type": "\"button\" | \"submit\" | \"reset\"",
+        "required": false
+      }
+    ],
+    "InputGroupText": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "InputGroupInput": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "type",
+        "type": "React.HTMLInputTypeAttribute",
+        "required": false
+      },
+      {
+        "name": "value",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "InputGroupTextarea": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "rows",
+        "type": "number",
+        "required": false
+      },
+      {
+        "name": "value",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

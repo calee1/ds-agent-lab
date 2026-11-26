@@ -25,13 +25,13 @@
   "props": {
     "Avatar": [
       {
-        "name": "children",
-        "type": "React.ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "React.ReactNode",
         "required": false
       },
       {
@@ -72,13 +72,13 @@
         "description": "Whether the image element stays mounted and loads in place instead of being preloaded.\nSupports `loading=\"lazy\"` and optimized image components such as `next/image`."
       },
       {
-        "name": "children",
-        "type": "React.ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "React.ReactNode",
         "required": false
       },
       {
@@ -108,13 +108,13 @@
         "description": "How long to wait before showing the fallback. Specified in milliseconds."
       },
       {
-        "name": "children",
-        "type": "React.ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "React.ReactNode",
         "required": false
       },
       {

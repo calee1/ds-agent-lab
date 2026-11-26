@@ -1,0 +1,190 @@
+{
+  "name": "Input Otp",
+  "slug": "input-otp",
+  "file": "src/components/ui/input-otp.tsx",
+  "install": "pnpm dlx shadcn@latest add input-otp",
+  "import": "import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from \"@/components/ui/input-otp\"",
+  "exports": [
+    "InputOTP",
+    "InputOTPGroup",
+    "InputOTPSlot",
+    "InputOTPSeparator"
+  ],
+  "slots": [
+    "input-otp",
+    "input-otp-group",
+    "input-otp-slot",
+    "input-otp-separator"
+  ],
+  "variants": {},
+  "defaultVariants": {},
+  "props": {
+    "InputOTP": [
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "type",
+        "type": "React.HTMLInputTypeAttribute",
+        "required": false
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "onChange",
+        "type": "(newValue: string) => unknown",
+        "required": false
+      },
+      {
+        "name": "maxLength",
+        "type": "number",
+        "required": true
+      },
+      {
+        "name": "textAlign",
+        "type": "\"center\" | \"left\" | \"right\"",
+        "required": false
+      },
+      {
+        "name": "onComplete",
+        "type": "(...args: any[]) => unknown",
+        "required": false
+      },
+      {
+        "name": "pushPasswordManagerStrategy",
+        "type": "\"none\" | \"increase-width\"",
+        "required": false
+      },
+      {
+        "name": "pasteTransformer",
+        "type": "(pasted: string) => string",
+        "required": false
+      },
+      {
+        "name": "containerClassName",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "noScriptCSSFallback",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "nonce",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "render",
+        "type": "(props: RenderProps) => React.ReactNode",
+        "required": false
+      }
+    ],
+    "InputOTPGroup": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "InputOTPSlot": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "index",
+        "type": "number",
+        "required": true
+      }
+    ],
+    "InputOTPSeparator": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

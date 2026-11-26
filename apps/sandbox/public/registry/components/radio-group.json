@@ -1,0 +1,174 @@
+{
+  "name": "Radio Group",
+  "slug": "radio-group",
+  "file": "src/components/ui/radio-group.tsx",
+  "install": "pnpm dlx shadcn@latest add radio-group",
+  "import": "import { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\"",
+  "exports": [
+    "RadioGroup",
+    "RadioGroupItem"
+  ],
+  "slots": [
+    "radio-group",
+    "radio-group-item",
+    "radio-group-indicator"
+  ],
+  "variants": {},
+  "defaultVariants": {},
+  "props": {
+    "RadioGroup": [
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the component should ignore user interaction."
+      },
+      {
+        "name": "readOnly",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the user should be unable to select a different radio button in the group."
+      },
+      {
+        "name": "required",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the user must choose a value before submitting a form."
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": false,
+        "description": "Identifies the field when a form is submitted."
+      },
+      {
+        "name": "form",
+        "type": "string",
+        "required": false,
+        "description": "Identifies the form that owns the radio inputs.\nUseful when the radio group is rendered outside the form."
+      },
+      {
+        "name": "value",
+        "type": "any",
+        "required": false,
+        "description": "The controlled value of the radio item that should be currently selected.\n\nTo render an uncontrolled radio group, use the `defaultValue` prop instead."
+      },
+      {
+        "name": "defaultValue",
+        "type": "any",
+        "required": false,
+        "description": "The uncontrolled value of the radio button that should be initially selected.\n\nTo render a controlled radio group, use the `value` prop instead."
+      },
+      {
+        "name": "onValueChange",
+        "type": "(value: any, eventDetails: RadioGroupPrimitive.ChangeEventDetails) => void",
+        "required": false,
+        "description": "Callback fired when the value changes."
+      },
+      {
+        "name": "inputRef",
+        "type": "Ref<HTMLInputElement>",
+        "required": false,
+        "description": "A ref to access the hidden input element."
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: RadioGroupState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties | ((state: RadioGroupState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
+      },
+      {
+        "name": "render",
+        "type": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, RadioGroupState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      }
+    ],
+    "RadioGroupItem": [
+      {
+        "name": "value",
+        "type": "any",
+        "required": true,
+        "description": "The unique identifying value of the radio in a group."
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the component should ignore user interaction."
+      },
+      {
+        "name": "required",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the user must choose a value before submitting a form."
+      },
+      {
+        "name": "readOnly",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the user should be unable to select the radio button."
+      },
+      {
+        "name": "inputRef",
+        "type": "Ref<HTMLInputElement>",
+        "required": false,
+        "description": "A ref to access the hidden input element."
+      },
+      {
+        "name": "nativeButton",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `true` if the rendered element is a native button."
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: RadioRootState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "style",
+        "type": "CSSProperties | ((state: RadioRootState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
+      },
+      {
+        "name": "render",
+        "type": "ReactElement<unknown, string | JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, RadioRootState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

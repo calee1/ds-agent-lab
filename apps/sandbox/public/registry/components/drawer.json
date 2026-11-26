@@ -1,0 +1,513 @@
+{
+  "name": "Drawer",
+  "slug": "drawer",
+  "file": "src/components/ui/drawer.tsx",
+  "install": "pnpm dlx shadcn@latest add drawer",
+  "import": "import { Drawer, DrawerPortal, DrawerOverlay, DrawerSwipeHandle, DrawerTrigger, DrawerClose, DrawerContent, DrawerHeader, DrawerFooter, DrawerTitle, DrawerDescription } from \"@/components/ui/drawer\"",
+  "exports": [
+    "Drawer",
+    "DrawerPortal",
+    "DrawerOverlay",
+    "DrawerSwipeHandle",
+    "DrawerTrigger",
+    "DrawerClose",
+    "DrawerContent",
+    "DrawerHeader",
+    "DrawerFooter",
+    "DrawerTitle",
+    "DrawerDescription"
+  ],
+  "slots": [
+    "drawer",
+    "drawer-trigger",
+    "drawer-portal",
+    "drawer-close",
+    "drawer-overlay",
+    "drawer-swipe-handle",
+    "drawer-viewport",
+    "drawer-popup",
+    "drawer-content",
+    "drawer-header",
+    "drawer-footer",
+    "drawer-title",
+    "drawer-description"
+  ],
+  "variants": {},
+  "defaultVariants": {},
+  "props": {
+    "Drawer": [
+      {
+        "name": "open",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the drawer is currently open."
+      },
+      {
+        "name": "defaultOpen",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the drawer is initially open.\n\nTo render a controlled drawer, use the `open` prop instead."
+      },
+      {
+        "name": "modal",
+        "type": "boolean | \"trap-focus\"",
+        "required": false,
+        "description": "Determines if the drawer enters a modal state when open.\n- `true`: user interaction is limited to just the drawer: focus is trapped, document page scroll is locked, and pointer interactions on outside elements are disabled.\n- `false`: user interaction with the rest of the document is allowed.\n- `'trap-focus'`: focus is trapped inside the drawer, but document page scroll is not locked and pointer interactions outside of it remain enabled."
+      },
+      {
+        "name": "onOpenChange",
+        "type": "(open: boolean, eventDetails: DrawerPrimitive.Root.ChangeEventDetails) => void",
+        "required": false,
+        "description": "Event handler called when the drawer is opened or closed."
+      },
+      {
+        "name": "onOpenChangeComplete",
+        "type": "(open: boolean) => void",
+        "required": false,
+        "description": "Event handler called after any animations complete when the drawer is opened or closed."
+      },
+      {
+        "name": "disablePointerDismissal",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether to prevent the drawer from closing on outside presses.\nFor non-modal drawers, this also prevents the drawer from closing when focus moves outside of it."
+      },
+      {
+        "name": "actionsRef",
+        "type": "React.RefObject<DrawerRootActions>",
+        "required": false,
+        "description": "A ref to imperative actions.\n- `unmount`: Ends the closing phase of the drawer after an externally controlled closing animation finishes.\nCall `preventUnmountOnClose()` in `onOpenChange` first, otherwise the drawer completes closing on its own.\nWhether it leaves the DOM is decided by `keepMounted` on the portal.\n- `close`: Closes the drawer imperatively when called."
+      },
+      {
+        "name": "handle",
+        "type": "DrawerPrimitive.Handle<unknown>",
+        "required": false,
+        "description": "A handle to associate the drawer with a trigger.\nIf specified, allows detached triggers to control the drawer's open state.\nCan be created with the Drawer.createHandle() method."
+      },
+      {
+        "name": "triggerId",
+        "type": "string",
+        "required": false,
+        "description": "ID of the trigger that the drawer is associated with.\nThis is useful in conjunction with the `open` prop to create a controlled drawer.\nThere's no need to specify this prop when the drawer is uncontrolled (that is, when the `open` prop is not set)."
+      },
+      {
+        "name": "defaultTriggerId",
+        "type": "string",
+        "required": false,
+        "description": "ID of the trigger that the drawer is associated with.\nThis is useful in conjunction with the `defaultOpen` prop to create an initially open drawer."
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode | PayloadChildRenderFunction<unknown>",
+        "required": false,
+        "description": "The content of the drawer."
+      },
+      {
+        "name": "swipeDirection",
+        "type": "SwipeDirection",
+        "required": false,
+        "description": "The swipe direction used to dismiss the drawer."
+      },
+      {
+        "name": "snapPoints",
+        "type": "DrawerSnapPoint[]",
+        "required": false,
+        "description": "Snap points used to position the drawer.\nUse numbers between 0 and 1 to represent fractions of the viewport height,\nnumbers greater than 1 as pixel values, or strings in `px`/`rem` units\n(for example, `'148px'` or `'30rem'`)."
+      },
+      {
+        "name": "snapToSequentialPoints",
+        "type": "boolean",
+        "required": false,
+        "description": "Disables velocity-based snap skipping so drag distance determines the next snap point."
+      },
+      {
+        "name": "snapPoint",
+        "type": "DrawerSnapPoint",
+        "required": false,
+        "description": "The currently active snap point. Use with `onSnapPointChange` to control the snap point."
+      },
+      {
+        "name": "defaultSnapPoint",
+        "type": "DrawerSnapPoint",
+        "required": false,
+        "description": "The initial snap point value when uncontrolled."
+      },
+      {
+        "name": "onSnapPointChange",
+        "type": "(snapPoint: DrawerSnapPoint | null, eventDetails: DrawerPrimitive.Root.SnapPointChangeEventDetails) => void",
+        "required": false,
+        "description": "Callback fired when the snap point changes."
+      },
+      {
+        "name": "showSwipeHandle",
+        "type": "boolean",
+        "required": false
+      }
+    ],
+    "DrawerTrigger": [
+      {
+        "name": "handle",
+        "type": "DrawerPrimitive.Handle<unknown>",
+        "required": false,
+        "description": "A handle to associate the trigger with a drawer.\nCan be created with the Drawer.createHandle() method."
+      },
+      {
+        "name": "payload",
+        "type": "unknown",
+        "required": false,
+        "description": "A payload to pass to the drawer when it is opened."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "ID of the trigger. In addition to being forwarded to the rendered element,\nit is also used to specify the active trigger for drawers in controlled mode (with the Drawer.Root `triggerId` prop)."
+      },
+      {
+        "name": "nativeButton",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (for example, `<div>`)."
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "type",
+        "type": "\"button\" | \"submit\" | \"reset\"",
+        "required": false
+      },
+      {
+        "name": "value",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: DrawerTriggerState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerTriggerSt...",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "React.CSSProperties | ((state: DrawerTriggerState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      }
+    ],
+    "DrawerPortal": [
+      {
+        "name": "keepMounted",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether to keep the portal mounted in the DOM while the popup is hidden."
+      },
+      {
+        "name": "container",
+        "type": "HTMLElement | ShadowRoot | React.RefObject<HTMLElement | ShadowRoot>",
+        "required": false,
+        "description": "A parent element to render the portal element into."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: DrawerPortalState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerPortalState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "React.CSSProperties | ((state: DrawerPortalState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      }
+    ],
+    "DrawerClose": [
+      {
+        "name": "nativeButton",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (for example, `<div>`)."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "type",
+        "type": "\"button\" | \"submit\" | \"reset\"",
+        "required": false
+      },
+      {
+        "name": "value",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: DrawerCloseState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerCloseState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "React.CSSProperties | ((state: DrawerCloseState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      }
+    ],
+    "DrawerOverlay": [
+      {
+        "name": "forceRender",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the backdrop is forced to render even when nested."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: DrawerBackdropState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerBackdropS...",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "React.CSSProperties | ((state: DrawerBackdropState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      }
+    ],
+    "DrawerSwipeHandle": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "DrawerContent": [
+      {
+        "name": "initialFocus",
+        "type": "boolean | React.RefObject<HTMLElement> | ((openType: InteractionType) => boolean | HTMLElement | null | void)",
+        "required": false,
+        "description": "Determines the element to focus when the drawer is opened.\n\n- `false`: Do not move focus.\n- `true`: Move focus based on the default behavior (first tabbable element or popup).\n- `RefObject`: Move focus to the ref element.\n- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).\n  Return an element to focus, `true` to use the default behavior, or `false`/`undefined` to do nothing."
+      },
+      {
+        "name": "finalFocus",
+        "type": "boolean | React.RefObject<HTMLElement> | ((closeType: InteractionType) => boolean | HTMLElement | null | void)",
+        "required": false,
+        "description": "Determines the element to focus when the drawer is closed.\n\n- `false`: Do not move focus.\n- `true`: Move focus based on the default behavior (trigger or previously focused element).\n- `RefObject`: Move focus to the ref element.\n- `function`: Called with the interaction type (`mouse`, `touch`, `pen`, or `keyboard`).\n  Return an element to focus, `true` to use the default behavior, or `false`/`undefined` to do nothing."
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: DrawerPopupState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerPopupState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "React.CSSProperties | ((state: DrawerPopupState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      }
+    ],
+    "DrawerHeader": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "DrawerFooter": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      }
+    ],
+    "DrawerTitle": [
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: DrawerTitleState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerTitleState>",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "React.CSSProperties | ((state: DrawerTitleState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      }
+    ],
+    "DrawerDescription": [
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string | ((state: DrawerDescriptionState) => string | undefined)",
+        "required": false,
+        "description": "CSS class applied to the element, or a function that\nreturns a class based on the component's state."
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, DrawerDescripti...",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+      },
+      {
+        "name": "style",
+        "type": "React.CSSProperties | ((state: DrawerDescriptionState) => React.CSSProperties | undefined)",
+        "required": false,
+        "description": "Style applied to the element, or a function that\nreturns a style object based on the component's state."
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}

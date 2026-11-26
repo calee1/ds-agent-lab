@@ -1,6 +1,16 @@
 {
   "components": [
     {
+      "slug": "accordion",
+      "name": "Accordion",
+      "exports": [
+        "Accordion",
+        "AccordionItem",
+        "AccordionTrigger",
+        "AccordionContent"
+      ]
+    },
+    {
       "slug": "alert",
       "name": "Alert",
       "exports": [
@@ -29,6 +39,28 @@
       ]
     },
     {
+      "slug": "aspect-ratio",
+      "name": "Aspect Ratio",
+      "exports": [
+        "AspectRatio"
+      ]
+    },
+    {
+      "slug": "attachment",
+      "name": "Attachment",
+      "exports": [
+        "Attachment",
+        "AttachmentGroup",
+        "AttachmentMedia",
+        "AttachmentContent",
+        "AttachmentTitle",
+        "AttachmentDescription",
+        "AttachmentActions",
+        "AttachmentAction",
+        "AttachmentTrigger"
+      ]
+    },
+    {
       "slug": "avatar",
       "name": "Avatar",
       "exports": [
@@ -48,10 +80,50 @@
       ]
     },
     {
+      "slug": "breadcrumb",
+      "name": "Breadcrumb",
+      "exports": [
+        "Breadcrumb",
+        "BreadcrumbList",
+        "BreadcrumbItem",
+        "BreadcrumbLink",
+        "BreadcrumbPage",
+        "BreadcrumbSeparator",
+        "BreadcrumbEllipsis"
+      ]
+    },
+    {
+      "slug": "bubble",
+      "name": "Bubble",
+      "exports": [
+        "BubbleGroup",
+        "Bubble",
+        "BubbleContent",
+        "BubbleReactions"
+      ]
+    },
+    {
       "slug": "button",
       "name": "Button",
       "exports": [
         "Button"
+      ]
+    },
+    {
+      "slug": "button-group",
+      "name": "Button Group",
+      "exports": [
+        "ButtonGroup",
+        "ButtonGroupSeparator",
+        "ButtonGroupText"
+      ]
+    },
+    {
+      "slug": "calendar",
+      "name": "Calendar",
+      "exports": [
+        "Calendar",
+        "CalendarDayButton"
       ]
     },
     {
@@ -68,10 +140,115 @@
       ]
     },
     {
+      "slug": "carousel",
+      "name": "Carousel",
+      "exports": [
+        "CarouselApi",
+        "Carousel",
+        "CarouselContent",
+        "CarouselItem",
+        "CarouselPrevious",
+        "CarouselNext"
+      ]
+    },
+    {
+      "slug": "chart",
+      "name": "Chart",
+      "exports": [
+        "ChartConfig",
+        "ChartContainer",
+        "ChartTooltip",
+        "ChartTooltipContent",
+        "ChartLegend",
+        "ChartLegendContent",
+        "ChartStyle"
+      ]
+    },
+    {
       "slug": "checkbox",
       "name": "Checkbox",
       "exports": [
         "Checkbox"
+      ]
+    },
+    {
+      "slug": "code-block",
+      "name": "Code Block",
+      "exports": [
+        "CodeBlock",
+        "CodeBlockHeader",
+        "CodeBlockTitle",
+        "CodeBlockActions",
+        "CodeBlockCopyButton",
+        "CodeBlockContent",
+        "CodeBlockLine",
+        "CodeBlockFooter"
+      ]
+    },
+    {
+      "slug": "collapsible",
+      "name": "Collapsible",
+      "exports": [
+        "Collapsible",
+        "CollapsibleTrigger",
+        "CollapsibleContent"
+      ]
+    },
+    {
+      "slug": "combobox",
+      "name": "Combobox",
+      "exports": [
+        "Combobox",
+        "ComboboxInput",
+        "ComboboxContent",
+        "ComboboxList",
+        "ComboboxItem",
+        "ComboboxGroup",
+        "ComboboxLabel",
+        "ComboboxCollection",
+        "ComboboxEmpty",
+        "ComboboxSeparator",
+        "ComboboxChips",
+        "ComboboxChip",
+        "ComboboxChipsInput",
+        "ComboboxTrigger",
+        "ComboboxValue"
+      ]
+    },
+    {
+      "slug": "command",
+      "name": "Command",
+      "exports": [
+        "Command",
+        "CommandDialog",
+        "CommandInput",
+        "CommandList",
+        "CommandEmpty",
+        "CommandGroup",
+        "CommandItem",
+        "CommandShortcut",
+        "CommandSeparator"
+      ]
+    },
+    {
+      "slug": "context-menu",
+      "name": "Context Menu",
+      "exports": [
+        "ContextMenu",
+        "ContextMenuTrigger",
+        "ContextMenuContent",
+        "ContextMenuItem",
+        "ContextMenuCheckboxItem",
+        "ContextMenuRadioItem",
+        "ContextMenuLabel",
+        "ContextMenuSeparator",
+        "ContextMenuShortcut",
+        "ContextMenuGroup",
+        "ContextMenuPortal",
+        "ContextMenuSub",
+        "ContextMenuSubContent",
+        "ContextMenuSubTrigger",
+        "ContextMenuRadioGroup"
       ]
     },
     {
@@ -91,6 +268,88 @@
       ]
     },
     {
+      "slug": "direction",
+      "name": "Direction",
+      "exports": [
+        "DirectionProvider"
+      ]
+    },
+    {
+      "slug": "drawer",
+      "name": "Drawer",
+      "exports": [
+        "Drawer",
+        "DrawerPortal",
+        "DrawerOverlay",
+        "DrawerSwipeHandle",
+        "DrawerTrigger",
+        "DrawerClose",
+        "DrawerContent",
+        "DrawerHeader",
+        "DrawerFooter",
+        "DrawerTitle",
+        "DrawerDescription"
+      ]
+    },
+    {
+      "slug": "dropdown-menu",
+      "name": "Dropdown Menu",
+      "exports": [
+        "DropdownMenu",
+        "DropdownMenuPortal",
+        "DropdownMenuTrigger",
+        "DropdownMenuContent",
+        "DropdownMenuGroup",
+        "DropdownMenuLabel",
+        "DropdownMenuItem",
+        "DropdownMenuCheckboxItem",
+        "DropdownMenuRadioGroup",
+        "DropdownMenuRadioItem",
+        "DropdownMenuSeparator",
+        "DropdownMenuShortcut",
+        "DropdownMenuSub",
+        "DropdownMenuSubTrigger",
+        "DropdownMenuSubContent"
+      ]
+    },
+    {
+      "slug": "empty",
+      "name": "Empty",
+      "exports": [
+        "Empty",
+        "EmptyHeader",
+        "EmptyTitle",
+        "EmptyDescription",
+        "EmptyContent",
+        "EmptyMedia"
+      ]
+    },
+    {
+      "slug": "field",
+      "name": "Field",
+      "exports": [
+        "Field",
+        "FieldLabel",
+        "FieldDescription",
+        "FieldError",
+        "FieldGroup",
+        "FieldLegend",
+        "FieldSeparator",
+        "FieldSet",
+        "FieldContent",
+        "FieldTitle"
+      ]
+    },
+    {
+      "slug": "hover-card",
+      "name": "Hover Card",
+      "exports": [
+        "HoverCard",
+        "HoverCardTrigger",
+        "HoverCardContent"
+      ]
+    },
+    {
       "slug": "input",
       "name": "Input",
       "exports": [
@@ -98,10 +357,159 @@
       ]
     },
     {
+      "slug": "input-group",
+      "name": "Input Group",
+      "exports": [
+        "InputGroup",
+        "InputGroupAddon",
+        "InputGroupButton",
+        "InputGroupText",
+        "InputGroupInput",
+        "InputGroupTextarea"
+      ]
+    },
+    {
+      "slug": "input-otp",
+      "name": "Input Otp",
+      "exports": [
+        "InputOTP",
+        "InputOTPGroup",
+        "InputOTPSlot",
+        "InputOTPSeparator"
+      ]
+    },
+    {
+      "slug": "item",
+      "name": "Item",
+      "exports": [
+        "Item",
+        "ItemMedia",
+        "ItemContent",
+        "ItemActions",
+        "ItemGroup",
+        "ItemSeparator",
+        "ItemTitle",
+        "ItemDescription",
+        "ItemHeader",
+        "ItemFooter"
+      ]
+    },
+    {
+      "slug": "kbd",
+      "name": "Kbd",
+      "exports": [
+        "Kbd",
+        "KbdGroup"
+      ]
+    },
+    {
       "slug": "label",
       "name": "Label",
       "exports": [
         "Label"
+      ]
+    },
+    {
+      "slug": "marker",
+      "name": "Marker",
+      "exports": [
+        "Marker",
+        "MarkerIcon",
+        "MarkerContent"
+      ]
+    },
+    {
+      "slug": "menubar",
+      "name": "Menubar",
+      "exports": [
+        "Menubar",
+        "MenubarPortal",
+        "MenubarMenu",
+        "MenubarTrigger",
+        "MenubarContent",
+        "MenubarGroup",
+        "MenubarSeparator",
+        "MenubarLabel",
+        "MenubarItem",
+        "MenubarShortcut",
+        "MenubarCheckboxItem",
+        "MenubarRadioGroup",
+        "MenubarRadioItem",
+        "MenubarSub",
+        "MenubarSubTrigger",
+        "MenubarSubContent"
+      ]
+    },
+    {
+      "slug": "message",
+      "name": "Message",
+      "exports": [
+        "MessageGroup",
+        "Message",
+        "MessageAvatar",
+        "MessageContent",
+        "MessageFooter",
+        "MessageHeader"
+      ]
+    },
+    {
+      "slug": "message-scroller",
+      "name": "Message Scroller",
+      "exports": [
+        "MessageScrollerProvider",
+        "MessageScroller",
+        "MessageScrollerViewport",
+        "MessageScrollerContent",
+        "MessageScrollerItem",
+        "MessageScrollerButton"
+      ]
+    },
+    {
+      "slug": "native-select",
+      "name": "Native Select",
+      "exports": [
+        "NativeSelect",
+        "NativeSelectOptGroup",
+        "NativeSelectOption"
+      ]
+    },
+    {
+      "slug": "navigation-menu",
+      "name": "Navigation Menu",
+      "exports": [
+        "NavigationMenu",
+        "NavigationMenuContent",
+        "NavigationMenuIndicator",
+        "NavigationMenuItem",
+        "NavigationMenuLink",
+        "NavigationMenuList",
+        "NavigationMenuTrigger",
+        "NavigationMenuPositioner"
+      ]
+    },
+    {
+      "slug": "pagination",
+      "name": "Pagination",
+      "exports": [
+        "Pagination",
+        "PaginationContent",
+        "PaginationEllipsis",
+        "PaginationItem",
+        "PaginationLink",
+        "PaginationNext",
+        "PaginationPrevious"
+      ]
+    },
+    {
+      "slug": "popover",
+      "name": "Popover",
+      "exports": [
+        "Popover",
+        "PopoverContent",
+        "PopoverDescription",
+        "PopoverHeader",
+        "PopoverTitle",
+        "PopoverTrigger"
       ]
     },
     {
@@ -113,6 +521,52 @@
         "ProgressIndicator",
         "ProgressLabel",
         "ProgressValue"
+      ]
+    },
+    {
+      "slug": "questionnaire",
+      "name": "Questionnaire",
+      "exports": [
+        "Questionnaire",
+        "QuestionnaireActions",
+        "QuestionnaireChoice",
+        "QuestionnaireChoiceDescription",
+        "QuestionnaireChoices",
+        "QuestionnaireDescription",
+        "QuestionnaireError",
+        "QuestionnaireInput",
+        "QuestionnaireItem",
+        "QuestionnaireNext",
+        "QuestionnairePrevious",
+        "QuestionnaireProgress",
+        "QuestionnaireSkip",
+        "QuestionnaireSubmit",
+        "QuestionnaireTitle"
+      ]
+    },
+    {
+      "slug": "radio-group",
+      "name": "Radio Group",
+      "exports": [
+        "RadioGroup",
+        "RadioGroupItem"
+      ]
+    },
+    {
+      "slug": "resizable",
+      "name": "Resizable",
+      "exports": [
+        "ResizableHandle",
+        "ResizablePanel",
+        "ResizablePanelGroup"
+      ]
+    },
+    {
+      "slug": "scroll-area",
+      "name": "Scroll Area",
+      "exports": [
+        "ScrollArea",
+        "ScrollBar"
       ]
     },
     {
@@ -139,10 +593,67 @@
       ]
     },
     {
+      "slug": "sheet",
+      "name": "Sheet",
+      "exports": [
+        "Sheet",
+        "SheetTrigger",
+        "SheetClose",
+        "SheetContent",
+        "SheetHeader",
+        "SheetFooter",
+        "SheetTitle",
+        "SheetDescription"
+      ]
+    },
+    {
+      "slug": "sidebar",
+      "name": "Sidebar",
+      "exports": [
+        "Sidebar",
+        "SidebarContent",
+        "SidebarFooter",
+        "SidebarGroup",
+        "SidebarGroupAction",
+        "SidebarGroupContent",
+        "SidebarGroupLabel",
+        "SidebarHeader",
+        "SidebarInput",
+        "SidebarInset",
+        "SidebarMenu",
+        "SidebarMenuAction",
+        "SidebarMenuBadge",
+        "SidebarMenuButton",
+        "SidebarMenuItem",
+        "SidebarMenuSkeleton",
+        "SidebarMenuSub",
+        "SidebarMenuSubButton",
+        "SidebarMenuSubItem",
+        "SidebarProvider",
+        "SidebarRail",
+        "SidebarSeparator",
+        "SidebarTrigger"
+      ]
+    },
+    {
       "slug": "skeleton",
       "name": "Skeleton",
       "exports": [
         "Skeleton"
+      ]
+    },
+    {
+      "slug": "slider",
+      "name": "Slider",
+      "exports": [
+        "Slider"
+      ]
+    },
+    {
+      "slug": "spinner",
+      "name": "Spinner",
+      "exports": [
+        "Spinner"
       ]
     },
     {
@@ -184,6 +695,37 @@
       ]
     },
     {
+      "slug": "toast",
+      "name": "Toast",
+      "exports": [
+        "Toaster",
+        "Toast",
+        "ToastAction",
+        "ToastClose",
+        "ToastContent",
+        "ToastDescription",
+        "ToastPortal",
+        "ToastProvider",
+        "ToastTitle",
+        "ToastViewport"
+      ]
+    },
+    {
+      "slug": "toggle",
+      "name": "Toggle",
+      "exports": [
+        "Toggle"
+      ]
+    },
+    {
+      "slug": "toggle-group",
+      "name": "Toggle Group",
+      "exports": [
+        "ToggleGroup",
+        "ToggleGroupItem"
+      ]
+    },
+    {
       "slug": "tooltip",
       "name": "Tooltip",
       "exports": [
@@ -191,6 +733,20 @@
         "TooltipTrigger",
         "TooltipContent",
         "TooltipProvider"
+      ]
+    },
+    {
+      "slug": "trace",
+      "name": "Trace",
+      "exports": [
+        "Trace",
+        "TraceLine",
+        "TraceIcon",
+        "TraceTitle",
+        "TraceDescription",
+        "TraceCollapsible",
+        "TraceCollapsibleTrigger",
+        "TraceCollapsibleContent"
       ]
     }
   ],

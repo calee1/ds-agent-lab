@@ -32,13 +32,13 @@
   "props": {
     "SelectGroup": [
       {
-        "name": "children",
-        "type": "React.ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "React.ReactNode",
         "required": false
       },
       {
@@ -116,6 +116,11 @@
         "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (for example, `<div>`)."
       },
       {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
         "name": "type",
         "type": "\"button\" | \"submit\" | \"reset\"",
         "required": false
@@ -123,11 +128,6 @@
       {
         "name": "value",
         "type": "string | number | readonly string[]",
-        "required": false
-      },
-      {
-        "name": "id",
-        "type": "string",
         "required": false
       },
       {
@@ -196,12 +196,6 @@
         "description": "How to align the popup relative to the specified side."
       },
       {
-        "name": "alignOffset",
-        "type": "number | OffsetFunction",
-        "required": false,
-        "description": "Additional offset along the alignment axis in pixels.\nAlso accepts a function that returns the offset to read the dimensions of the anchor\nand positioner elements, along with its side and alignment.\n\nThe function takes a `data` object parameter with the following properties:\n- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.\n- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.\n- `data.side`: which side of the anchor element the positioner is aligned against.\n- `data.align`: how the positioner is aligned relative to the specified side."
-      },
-      {
         "name": "side",
         "type": "Side",
         "required": false,
@@ -214,6 +208,12 @@
         "description": "Distance between the anchor and the popup in pixels.\nAlso accepts a function that returns the distance to read the dimensions of the anchor\nand positioner elements, along with its side and alignment.\n\nThe function takes a `data` object parameter with the following properties:\n- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.\n- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.\n- `data.side`: which side of the anchor element the positioner is aligned against.\n- `data.align`: how the positioner is aligned relative to the specified side."
       },
       {
+        "name": "alignOffset",
+        "type": "number | OffsetFunction",
+        "required": false,
+        "description": "Additional offset along the alignment axis in pixels.\nAlso accepts a function that returns the offset to read the dimensions of the anchor\nand positioner elements, along with its side and alignment.\n\nThe function takes a `data` object parameter with the following properties:\n- `data.anchor`: the dimensions of the anchor element with properties `width` and `height`.\n- `data.positioner`: the dimensions of the positioner element with properties `width` and `height`.\n- `data.side`: which side of the anchor element the positioner is aligned against.\n- `data.align`: how the positioner is aligned relative to the specified side."
+      },
+      {
         "name": "alignItemWithTrigger",
         "type": "boolean",
         "required": false,
@@ -222,13 +222,13 @@
     ],
     "SelectLabel": [
       {
-        "name": "children",
-        "type": "React.ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "React.ReactNode",
         "required": false
       },
       {
@@ -307,13 +307,13 @@
         "description": "The orientation of the separator."
       },
       {
-        "name": "children",
-        "type": "React.ReactNode",
+        "name": "id",
+        "type": "string",
         "required": false
       },
       {
-        "name": "id",
-        "type": "string",
+        "name": "children",
+        "type": "React.ReactNode",
         "required": false
       },
       {
@@ -337,11 +337,6 @@
     ],
     "SelectScrollUpButton": [
       {
-        "name": "children",
-        "type": "React.ReactNode",
-        "required": false
-      },
-      {
         "name": "className",
         "type": "string | ((state: SelectScrollUpArrowState) => string | undefined)",
         "required": false,
@@ -359,24 +354,24 @@
         "required": false
       },
       {
-        "name": "render",
-        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectScrollUpA...",
-        "required": false,
-        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
       },
       {
         "name": "keepMounted",
         "type": "boolean",
         "required": false,
         "description": "Whether to keep the HTML element in the DOM while the select popup is not scrollable."
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectScrollUpA...",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
       }
     ],
     "SelectScrollDownButton": [
-      {
-        "name": "children",
-        "type": "React.ReactNode",
-        "required": false
-      },
       {
         "name": "className",
         "type": "string | ((state: SelectScrollDownArrowState) => string | undefined)",
@@ -395,16 +390,21 @@
         "required": false
       },
       {
-        "name": "render",
-        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectScrollDow...",
-        "required": false,
-        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": false
       },
       {
         "name": "keepMounted",
         "type": "boolean",
         "required": false,
         "description": "Whether to keep the HTML element in the DOM while the select popup is not scrollable."
+      },
+      {
+        "name": "render",
+        "type": "React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | ComponentRenderFn<HTMLProps, SelectScrollDow...",
+        "required": false,
+        "description": "Allows you to replace the component's HTML element\nwith a different tag, or compose it with another component.\n\nAccepts a `ReactElement` or a function that returns the element to render."
       }
     ]
   },

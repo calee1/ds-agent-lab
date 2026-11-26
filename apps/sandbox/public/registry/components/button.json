@@ -49,6 +49,11 @@
         "description": "Whether the component renders a native `<button>` element when replacing it\nvia the `render` prop.\nSet to `false` if the rendered element is not a button (for example, `<div>`)."
       },
       {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
         "name": "children",
         "type": "ReactNode",
         "required": false
@@ -66,11 +71,6 @@
       {
         "name": "value",
         "type": "string | number | readonly string[]",
-        "required": false
-      },
-      {
-        "name": "id",
-        "type": "string",
         "required": false
       },
       {

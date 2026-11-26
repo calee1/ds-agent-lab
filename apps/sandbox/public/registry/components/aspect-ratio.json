@@ -1,0 +1,48 @@
+{
+  "name": "Aspect Ratio",
+  "slug": "aspect-ratio",
+  "file": "src/components/ui/aspect-ratio.tsx",
+  "install": "pnpm dlx shadcn@latest add aspect-ratio",
+  "import": "import { AspectRatio } from \"@/components/ui/aspect-ratio\"",
+  "exports": [
+    "AspectRatio"
+  ],
+  "slots": [
+    "aspect-ratio"
+  ],
+  "variants": {},
+  "defaultVariants": {},
+  "props": {
+    "AspectRatio": [
+      {
+        "name": "defaultValue",
+        "type": "string | number | readonly string[]",
+        "required": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false
+      },
+      {
+        "name": "ratio",
+        "type": "number",
+        "required": true
+      }
+    ]
+  },
+  "whenToUse": [],
+  "whenNotToUse": [],
+  "a11y": [],
+  "relatedDecisions": []
+}
