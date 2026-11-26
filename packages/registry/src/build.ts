@@ -115,10 +115,14 @@ function parseVars(block: string) {
 }
 
 function buildTokens(): Tokens {
-  const css = fs.readFileSync(path.join(sandbox, "src/index.css"), "utf8")
-  const rootBlock = css.match(/:root\s*\{([\s\S]*?)\n\}/)?.[1] ?? ""
-  const darkBlock = css.match(/\.dark\s*\{([\s\S]*?)\n\}/)?.[1] ?? ""
-  const themeBlock = css.match(/@theme inline\s*\{([\s\S]*?)\n\s*\}/)?.[1] ?? ""
+  // Read from split skin files instead of the monolithic index.css
+  const defaultCss = fs.readFileSync(path.join(sandbox, "src/styles/skins/default.css"), "utf8")
+  const foundationsCss = fs.readFileSync(path.join(sandbox, "src/styles/foundations.css"), "utf8")
+  // :root or [data-skin="default"] block = light tokens
+  const rootBlock = defaultCss.match(/:root[^{]*\{([\s\S]*?)\n\}/)?.[1] ?? ""
+  // .dark block = dark tokens
+  const darkBlock = defaultCss.match(/\.dark[^{]*\{([\s\S]*?)\n\}/)?.[1] ?? ""
+  const themeBlock = foundationsCss.match(/@theme inline\s*\{([\s\S]*?)\n\s*\}/)?.[1] ?? ""
   const light = parseVars(rootBlock)
   const dark = parseVars(darkBlock)
   const theme = parseVars(themeBlock)

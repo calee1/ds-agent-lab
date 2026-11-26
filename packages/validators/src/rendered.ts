@@ -14,7 +14,10 @@ export const VIEWPORTS = [
   { name: "tablet", width: 768, height: 1024 },
   { name: "desktop", width: 1280, height: 800 },
 ] as const
-export const THEMES = ["light", "dark"] as const
+export const MODES = ["light", "dark"] as const
+export const SKINS = ["default", "wireframe"] as const
+/** All skin × mode combos, e.g. "default-light", "wireframe-dark" */
+export const THEMES = SKINS.flatMap((skin) => MODES.map((mode) => `${skin}-${mode}`)) as unknown as readonly string[]
 
 export type RenderedResult = { violations: Violation[]; screenshots: string[] }
 
@@ -82,14 +85,19 @@ export async function renderedChecks(baseUrl: string, routePath: string, label: 
   const browser = await chromium.launch()
   try {
     for (const theme of THEMES) {
+      const [skin, mode] = theme.split("-") as [string, string]
+      const isDark = mode === "dark"
       for (const vp of VIEWPORTS) {
-        const context = await browser.newContext({ viewport: { width: vp.width, height: vp.height }, colorScheme: theme })
-        await context.addInitScript((t: string) => {
-          const apply = () => document.documentElement?.classList.toggle("dark", t === "dark")
+        const context = await browser.newContext({ viewport: { width: vp.width, height: vp.height }, colorScheme: isDark ? "dark" : "light" })
+        await context.addInitScript(({ skin, isDark }: { skin: string; isDark: boolean }) => {
+          const apply = () => {
+            document.documentElement?.classList.toggle("dark", isDark)
+            document.documentElement?.setAttribute("data-skin", skin)
+          }
           apply()
           document.addEventListener("readystatechange", apply)
           document.addEventListener("DOMContentLoaded", apply)
-        }, theme)
+        }, { skin, isDark })
         const page = await context.newPage()
         const where = `${label} @${vp.name}/${theme}`
         const consoleErrors: string[] = []
