@@ -43,6 +43,8 @@ export const DecisionSchema = z.object({
   status: z.enum(["accepted", "proposed", "superseded"]),
   severity: z.enum(["error", "warn"]),
   scope: z.array(z.string()),
+  /** Present only for skin-specific rules; absent means the rule applies to all skins. */
+  skin: z.string().optional(),
   enforcement: z.object({
     type: z.enum(["eslint", "playwright", "visual", "reviewer"]),
     ref: z.string(),
