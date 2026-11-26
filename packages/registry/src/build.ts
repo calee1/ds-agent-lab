@@ -2,8 +2,8 @@ import fs from "node:fs"
 import path from "node:path"
 import matter from "gray-matter"
 import { Node, Project, SyntaxKind, TypeFormatFlags, type SourceFile } from "ts-morph"
-import { ComponentSchema, DecisionSchema, TokensSchema } from "./schema.ts"
-import type { Component, Decision, Tokens } from "./schema.ts"
+import { ComponentSchema, DecisionSchema, SkinSchema, TokensSchema } from "./schema.ts"
+import type { Component, Decision, Skin, Tokens } from "./schema.ts"
 
 const root = path.resolve(import.meta.dirname, "..")
 const sandbox = path.resolve(root, "../../apps/sandbox")
@@ -175,6 +175,20 @@ function buildDecisions(): Decision[] {
   })
 }
 
+function buildSkins(decisions: Decision[]): Skin[] {
+  const skinsDir = path.join(root, "skins")
+  if (!fs.existsSync(skinsDir)) return []
+  return fs
+    .readdirSync(skinsDir)
+    .filter((f) => f.endsWith(".json"))
+    .sort()
+    .map((f) => {
+      const data = JSON.parse(fs.readFileSync(path.join(skinsDir, f), "utf8"))
+      const skinDecisions = decisions.filter((d) => d.skin === data.slug).map((d) => d.id)
+      return SkinSchema.parse({ ...data, decisions: skinDecisions })
+    })
+}
+
 function buildPatterns() {
   const dir = path.join(root, "patterns")
   return fs.readdirSync(dir).filter((f) => f.endsWith(".md")).sort().map((f) => {
@@ -187,6 +201,7 @@ const components = buildComponents()
 const tokens = buildTokens()
 const decisions = buildDecisions()
 const patterns = buildPatterns()
+const skins = buildSkins(decisions)
 
 if (new Set(decisions.map((d) => d.id)).size !== decisions.length) throw new Error("Duplicate decision id")
 for (const c of components) {
@@ -198,10 +213,12 @@ const files: Record<string, unknown> = {
     components: components.map((c) => ({ slug: c.slug, name: c.name, exports: c.exports })),
     decisions: decisions.map((d) => ({ id: d.id, title: d.title, severity: d.severity })),
     patterns: patterns.map((p) => ({ slug: p.slug, title: p.title })),
+    skins: skins.map((s) => ({ slug: s.slug, name: s.name, modes: s.modes })),
   },
   "tokens.json": tokens,
   "decisions.json": decisions,
   "patterns.json": patterns,
+  "skins.json": skins,
   "components.json": components,
   ...Object.fromEntries(components.map((c) => [`components/${c.slug}.json`, c])),
 }
@@ -226,4 +243,4 @@ if (!check) {
   fs.rmSync(publicDir, { recursive: true, force: true })
   fs.cpSync(outDir, publicDir, { recursive: true })
 }
-console.log(`${check ? "checked" : "wrote"} ${components.length} components, ${decisions.length} decisions, ${patterns.length} patterns`)
+console.log(`${check ? "checked" : "wrote"} ${components.length} components, ${decisions.length} decisions, ${patterns.length} patterns, ${skins.length} skins`)

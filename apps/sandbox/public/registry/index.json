@@ -849,5 +849,30 @@
       "slug": "page-layout",
       "title": "Page layout"
     }
+  ],
+  "skins": [
+    {
+      "slug": "branded",
+      "name": "Branded",
+      "modes": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "slug": "default",
+      "name": "Default",
+      "modes": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "slug": "wireframe",
+      "name": "Wireframe",
+      "modes": [
+        "light"
+      ]
+    }
   ]
 }

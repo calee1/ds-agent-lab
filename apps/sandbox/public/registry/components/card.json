@@ -185,8 +185,25 @@
       }
     ]
   },
-  "whenToUse": [],
-  "whenNotToUse": [],
-  "a11y": [],
-  "relatedDecisions": []
+  "description": "A surface for grouping related content with an optional header, body and footer.",
+  "whenToUse": [
+    "Grouping a form into distinct sections",
+    "Presenting a summary with title, description and actions",
+    "Dashboard tiles that contain a chart or metric"
+  ],
+  "whenNotToUse": [
+    "Wrapping a plain list that should flow without visual separation (use a list or Separator)",
+    "Navigation items (use nav links or sidebar components)",
+    "Full-page containers — Card adds a background and border; use a plain div for layout"
+  ],
+  "a11y": [
+    "Use a semantic heading (h2, h3) inside CardTitle when the card introduces a distinct section — screen readers rely on heading hierarchy for navigation.",
+    "Interactive cards (clickable as a whole) need a focusable element such as a Button or Link inside them; wrapping the entire card in an anchor tag is acceptable only when every part of the card is part of that link's label."
+  ],
+  "relatedDecisions": [
+    "DR-0001",
+    "DR-0002",
+    "DR-0003"
+  ],
+  "example": "<Card><CardHeader><CardTitle>Recent activity</CardTitle><CardDescription>Last 7 days</CardDescription></CardHeader><CardContent><p>No events yet.</p></CardContent></Card>"
 }

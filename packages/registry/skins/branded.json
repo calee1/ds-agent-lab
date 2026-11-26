@@ -1,0 +1,9 @@
+{
+  "slug": "branded",
+  "name": "Branded",
+  "description": "Oceanic teal palette with seafoam accents, Nunito Variable font, 1 rem rounded corners and layered card shadows.",
+  "modes": ["light", "dark"],
+  "cssFile": "src/styles/skins/branded.css",
+  "radius": "1rem",
+  "font": "Nunito Variable"
+}

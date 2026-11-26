@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "branded",
+    "name": "Branded",
+    "description": "Oceanic teal palette with seafoam accents, Nunito Variable font, 1 rem rounded corners and layered card shadows.",
+    "modes": [
+      "light",
+      "dark"
+    ],
+    "cssFile": "src/styles/skins/branded.css",
+    "radius": "1rem",
+    "font": "Nunito Variable",
+    "decisions": []
+  },
+  {
+    "slug": "default",
+    "name": "Default",
+    "description": "The standard shadcn palette with neutral grays, standard radius and no extra shadows.",
+    "modes": [
+      "light",
+      "dark"
+    ],
+    "cssFile": "src/styles/skins/default.css",
+    "decisions": []
+  },
+  {
+    "slug": "wireframe",
+    "name": "Wireframe",
+    "description": "Grayscale palette, square corners, no shadows. Cards and popovers use dashed borders. Useful for layout reviews before colour is applied.",
+    "modes": [
+      "light"
+    ],
+    "cssFile": "src/styles/skins/wireframe.css",
+    "radius": "0rem",
+    "decisions": []
+  }
+]

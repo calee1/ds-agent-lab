@@ -1,0 +1,7 @@
+{
+  "slug": "default",
+  "name": "Default",
+  "description": "The standard shadcn palette with neutral grays, standard radius and no extra shadows.",
+  "modes": ["light", "dark"],
+  "cssFile": "src/styles/skins/default.css"
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "wireframe",
+  "name": "Wireframe",
+  "description": "Grayscale palette, square corners, no shadows. Cards and popovers use dashed borders. Useful for layout reviews before colour is applied.",
+  "modes": ["light"],
+  "cssFile": "src/styles/skins/wireframe.css",
+  "radius": "0rem"
+}

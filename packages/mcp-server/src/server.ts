@@ -9,6 +9,7 @@ const dist = path.resolve(import.meta.dirname, "../../registry/dist")
 const read = <T>(rel: string): T => JSON.parse(fs.readFileSync(path.join(dist, rel), "utf8"))
 
 type Index = { components: { slug: string; name: string; exports: string[] }[] }
+type Skin = { slug: string; name: string; description: string; modes: string[]; cssFile: string; radius?: string; font?: string; decisions: string[] }
 type Decision = { id: string; title: string; status: string; severity: string; scope: string[]; enforcement: { type: string; ref: string }; rationale: string; do: string[]; dont: string[]; body: string }
 type Pattern = { slug: string; title: string; summary: string; body: string }
 
@@ -81,6 +82,29 @@ export function createServer() {
       if (!name) return text(patterns.map((p) => ({ slug: p.slug, title: p.title, summary: p.summary })))
       const p = patterns.find((x) => x.slug === name)
       return p ? text(`# ${p.title}\n\n${p.body}`) : fail(`Unknown pattern "${name}". Available: ${patterns.map((x) => x.slug).join(", ")}`)
+    },
+  )
+
+  server.registerTool(
+    "list_skins",
+    { description: "List all available skins with their supported modes (light/dark). Use get_skin for full details.", inputSchema: {} },
+    async () => text(read<Skin[]>("skins.json").map(({ slug, name, description, modes }) => ({ slug, name, description, modes }))),
+  )
+
+  server.registerTool(
+    "get_skin",
+    {
+      description: "Full metadata for one skin: description, supported modes, CSS file path, radius, font, and IDs of any skin-specific decision records.",
+      inputSchema: { slug: z.string().describe('Skin slug, e.g. "default", "wireframe", "branded"') },
+    },
+    async ({ slug }) => {
+      const skins = read<Skin[]>("skins.json")
+      const skin = skins.find((s) => s.slug === slug)
+      if (!skin) {
+        const known = skins.map((s) => s.slug).join(", ")
+        return fail(`Unknown skin "${slug}". Available: ${known}`)
+      }
+      return text(skin)
     },
   )
 
