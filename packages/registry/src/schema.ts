@@ -55,6 +55,19 @@ export const DecisionSchema = z.object({
   body: z.string(),
 })
 
+export const SkinSchema = z.object({
+  slug: z.string(),
+  name: z.string(),
+  description: z.string(),
+  modes: z.array(z.enum(["light", "dark"])),
+  cssFile: z.string(),
+  radius: z.string().optional(),
+  font: z.string().optional(),
+  /** Decision record IDs scoped to this skin — injected by build.ts from decisions.json */
+  decisions: z.array(z.string()).default([]),
+})
+
 export type Component = z.infer<typeof ComponentSchema>
 export type Tokens = z.infer<typeof TokensSchema>
 export type Decision = z.infer<typeof DecisionSchema>
+export type Skin = z.infer<typeof SkinSchema>
