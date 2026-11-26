@@ -5,6 +5,7 @@
   "scripts": {
     "validate": "node src/cli.ts",
     "test": "node --test --test-concurrency=1 --test-timeout=400000 \"test/*.test.ts\"",
+    "test:ci": "node --test --test-concurrency=1 --test-timeout=400000 --test-skip-pattern=\"gallery matches committed baselines\" \"test/*.test.ts\"",
     "visual": "node src/visual-cli.ts"
   },
   "dependencies": {

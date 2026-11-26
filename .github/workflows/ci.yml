@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+      # postinstall regenerates the registry
+      - run: pnpm install --frozen-lockfile
+      - name: Committed registry is up to date
+        run: |
+          changes="$(git status --porcelain)"
+          if [ -n "$changes" ]; then
+            echo "$changes"
+            echo "Run 'pnpm registry:build' and commit the result."
+            exit 1
+          fi
+      - name: Build sandbox
+        run: pnpm --filter sandbox build
+      - name: MCP server tests
+        run: pnpm --filter @ds/mcp-server test
+      - name: Install Chromium
+        run: pnpm --filter @ds/validators exec playwright install --with-deps chromium
+      - name: Validator tests
+        run: pnpm --filter @ds/validators test:ci
+      - uses: actions/upload-artifact@v7
+        if: failure()
+        with:
+          name: reports
+          path: reports/
+          if-no-files-found: ignore
