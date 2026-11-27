@@ -4,6 +4,9 @@
     /* Square corners */
     --radius: 0rem;
 
+    /* Hand-drawn feel */
+    --font-sans: 'Patrick Hand', cursive;
+
     /* Light mode — greyscale palette */
     --background: oklch(1 0 0);
     --foreground: oklch(0.2 0 0);
