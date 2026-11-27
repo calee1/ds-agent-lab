@@ -155,7 +155,7 @@ export default function Home() {
           <div className="text-center py-16 space-y-6">
             <h2 className="text-2xl font-semibold">Ready to explore?</h2>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button render={<a href="/skin-demo" />}>View skins &amp; components</Button>
+              <Button variant="secondary" render={<a href="/skin-demo" />}>View skins &amp; components</Button>
               <Button variant="outline" render={<a href="/foundations" />}>Browse foundations</Button>
             </div>
           </div>
