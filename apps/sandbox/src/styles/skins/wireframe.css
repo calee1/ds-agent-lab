@@ -4,8 +4,8 @@
     /* Square corners */
     --radius: 0rem;
 
-    /* Hand-drawn feel */
-    --font-sans: 'Patrick Hand', cursive;
+    /* Hand-drawn feel — set directly because @theme inline bakes font-sans at build time */
+    font-family: 'Patrick Hand', cursive;
 
     /* Light mode — greyscale palette */
     --background: oklch(1 0 0);

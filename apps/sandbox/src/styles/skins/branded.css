@@ -4,8 +4,8 @@
     /* More rounded than default (0.625rem) */
     --radius: 1rem;
 
-    /* Override font to Nunito — rounded, friendly, oceanic feel */
-    --font-sans: 'Nunito Variable', sans-serif;
+    /* Override font — set directly because @theme inline bakes font-sans at build time */
+    font-family: 'Lato', sans-serif;
 
     /* ── Light mode ──────────────────────────────────────────────── */
     --background:           oklch(0.97  0.012 193);
