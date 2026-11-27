@@ -110,6 +110,7 @@ function SkinSwitcher({ skin, setSkin, mode, setMode }: {
 
 export default function App() {
   const { skin, setSkin, mode, setMode } = useSkinSwitcher()
+  const isHome = window.location.pathname === "/"
   const Page = resolve(window.location.pathname)
   if (!Page) {
     return (
@@ -120,7 +121,7 @@ export default function App() {
             <p className="text-sm text-muted-foreground">Add src/routes/&lt;slug&gt;/index.tsx.</p>
           </main>
         </div>
-        <SkinSwitcher skin={skin} setSkin={setSkin} mode={mode} setMode={setMode} />
+        {!isHome && <SkinSwitcher skin={skin} setSkin={setSkin} mode={mode} setMode={setMode} />}
       </>
     )
   }
@@ -129,7 +130,7 @@ export default function App() {
       <Suspense fallback={null}>
         <Page />
       </Suspense>
-      <SkinSwitcher skin={skin} setSkin={setSkin} mode={mode} setMode={setMode} />
+      {!isHome && <SkinSwitcher skin={skin} setSkin={setSkin} mode={mode} setMode={setMode} />}
     </>
   )
 }
