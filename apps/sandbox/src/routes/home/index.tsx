@@ -19,6 +19,13 @@ export default function Home() {
             <Button render={<a href="/skin-demo" />}>View skins &amp; components</Button>
             <Button variant="outline" render={<a href="/foundations" />}>Browse foundations</Button>
           </div>
+          <div className="mt-12 flex justify-center">
+            <img
+              src="/hax-illustration.webp"
+              alt="Robots and a designer collaborate around a laptop, building UI together with the HAX Design system"
+              className="w-full max-w-md rounded-xl"
+            />
+          </div>
         </section>
 
         {/* Section 2 — What is HAX? */}
@@ -38,6 +45,13 @@ export default function Home() {
         {/* Section 3 — How it works */}
         <section className="space-y-6">
           <h2 className="text-2xl font-bold tracking-tight">How it works</h2>
+          <div className="flex justify-center">
+            <img
+              src="/hax-pipeline.png"
+              alt="Architecture diagram: the design system repository (Foundations and Component library) feeds tokens and a validated component API into Decision records and Skill plus skins. The Builder agent reads these and generates UI, which passes through a Review gate — Reviewer agent and Accessibility agent — before being presented to you. Failed reviews loop back to the Builder agent."
+              className="w-full max-w-3xl rounded-lg border border-border"
+            />
+          </div>
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
             <Card className="w-full sm:w-44 text-center">
               <CardContent className="pt-6 flex flex-col items-center gap-2">
