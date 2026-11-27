@@ -142,16 +142,20 @@ export default function SkinDemo() {
 
         {/* Page header */}
         <div className="space-y-3">
-          <h1 className="text-2xl font-bold tracking-tight">Component gallery</h1>
+          <h1 className="text-2xl font-bold tracking-tight">HAX Design System — Skins</h1>
           <p className="text-sm text-muted-foreground">
             Use the skin switcher in the bottom-right corner to toggle between skins. Each skin
-            changes the visual character of the page — colors, borders and typography weight — while
+            changes the visual character of the page — colors, borders and typography — while
             the layout and component structure stay the same.
           </p>
-          <div className="flex flex-wrap gap-2">
-            <Badge>default</Badge>
-            <Badge variant="secondary">wireframe</Badge>
-            <Badge variant="outline">branded</Badge>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="/foundations"
+              className="text-sm font-medium underline underline-offset-4 hover:text-primary"
+            >
+              Foundations
+            </a>
+            <span className="text-sm font-medium text-muted-foreground">Component gallery</span>
           </div>
         </div>
 
