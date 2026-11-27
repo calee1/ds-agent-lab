@@ -48,7 +48,7 @@ function SkinSwitcher({ skin, setSkin, mode, setMode }: {
       }}
       aria-label="Skin switcher"
     >
-      {(["default", "wireframe", "branded"] as Skin[]).map((s) => (
+      {(["default", "branded"] as Skin[]).map((s) => (
         <button
           key={s}
           onClick={() => setSkin(s)}
@@ -87,6 +87,23 @@ function SkinSwitcher({ skin, setSkin, mode, setMode }: {
           {m}
         </button>
       ))}
+      <div style={{ width: "1px", height: "1rem", background: "var(--border)" }} aria-hidden />
+      <button
+        onClick={() => setSkin("wireframe")}
+        aria-pressed={skin === "wireframe"}
+        className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+        style={{
+          padding: "0.2rem 0.5rem",
+          borderRadius: "var(--radius-sm)",
+          border: "1px solid var(--border)",
+          background: skin === "wireframe" ? "var(--primary)" : "transparent",
+          color: skin === "wireframe" ? "var(--primary-foreground)" : "var(--foreground)",
+          cursor: "pointer",
+          fontFamily: "inherit", fontSize: "inherit",
+        }}
+      >
+        wireframe
+      </button>
     </div>
   )
 }
