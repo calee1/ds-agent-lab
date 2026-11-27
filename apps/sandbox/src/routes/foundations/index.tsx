@@ -188,9 +188,9 @@ export default function FoundationsPage() {
 
                   <div
                     role="alert"
-                    className="rounded-lg border border-border bg-card p-4"
+                    className="rounded-lg border border-success bg-card p-4"
                   >
-                    <p className="text-sm font-medium text-foreground">Success</p>
+                    <p className="text-sm font-medium text-success">Success</p>
                     <p className="text-sm text-muted-foreground mt-1">
                       Operation completed successfully
                     </p>
@@ -198,9 +198,9 @@ export default function FoundationsPage() {
 
                   <div
                     role="alert"
-                    className="rounded-lg border border-border bg-card p-4"
+                    className="rounded-lg border border-warning bg-card p-4"
                   >
-                    <p className="text-sm font-medium text-foreground">Warning</p>
+                    <p className="text-sm font-medium text-warning">Warning</p>
                     <p className="text-sm text-muted-foreground mt-1">
                       Please review before continuing
                     </p>
