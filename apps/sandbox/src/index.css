@@ -4,6 +4,7 @@
 @import "@fontsource-variable/geist";
 @import "@fontsource-variable/nunito";
 @import "@fontsource/patrick-hand";
+@import "@fontsource/lato";
 
 @custom-variant dark (&:is(.dark *));
 
