@@ -808,7 +808,7 @@
     },
     {
       "id": "DR-0012",
-      "title": "One primary Button per view",
+      "title": "One primary action per view",
       "severity": "warn"
     },
     {
