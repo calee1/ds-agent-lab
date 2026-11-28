@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { Sparkles } from "lucide-react"
+import { Sparkles, ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Textarea } from "@/components/ui/textarea"
@@ -14,6 +14,13 @@ export default function HaxDemo() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="mx-auto max-w-screen-xl px-4">
+
+        <header className="py-4">
+          <Button variant="ghost" render={<a href="/" />}>
+            <ArrowLeft size={16} />
+            Back
+          </Button>
+        </header>
 
         <main className="pb-16">
           <div className="max-w-2xl mx-auto space-y-8">
