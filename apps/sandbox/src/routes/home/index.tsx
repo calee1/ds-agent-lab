@@ -45,8 +45,7 @@ export default function Home() {
               An agent-driven design system where every UI is built by AI, validated by rules, and always on-brand.
             </p>
             <div className="flex flex-wrap gap-4 justify-center mt-8">
-              <Button render={<a href="/skin-demo" />}>View skins &amp; components</Button>
-              <Button variant="outline" render={<a href="/foundations" />}>Browse foundations</Button>
+              <Button render={<a href="/skin-demo" />}>Skins &amp; components</Button>
             </div>
             <div className="mt-12 flex justify-center">
               <img
@@ -198,8 +197,7 @@ export default function Home() {
             <div className="text-center py-16 space-y-6">
               <h2 className="text-2xl font-semibold">Ready to explore?</h2>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Button variant="secondary" render={<a href="/skin-demo" />}>View skins &amp; components</Button>
-                <Button variant="outline" render={<a href="/foundations" />}>Browse foundations</Button>
+                <Button render={<a href="/skin-demo" />}>Skins &amp; components</Button>
               </div>
             </div>
           </section>
