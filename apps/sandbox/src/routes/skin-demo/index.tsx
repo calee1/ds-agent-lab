@@ -235,6 +235,10 @@ export default function SkinDemo() {
   useEffect(() => {
     document.documentElement.setAttribute("data-skin", skin)
     document.documentElement.classList.toggle("dark", mode === "dark")
+
+    const resetSkin = () => localStorage.setItem("skin", "branded")
+    window.addEventListener("pagehide", resetSkin)
+    return () => window.removeEventListener("pagehide", resetSkin)
   }, [])
 
   return (
