@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import { Sparkles, Sun, Moon } from "lucide-react"
+import { useEffect } from "react"
+import { Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Textarea } from "@/components/ui/textarea"
@@ -11,28 +11,9 @@ export default function HaxDemo() {
     return () => document.documentElement.setAttribute("data-skin", prev)
   }, [])
 
-  const [dark, setDark] = useState(() => document.documentElement.classList.contains("dark"))
-
-  const toggleDark = () => {
-    const next = !dark
-    document.documentElement.classList.toggle("dark", next)
-    localStorage.setItem("mode", next ? "dark" : "light")
-    setDark(next)
-  }
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="mx-auto max-w-screen-xl px-4">
-
-        <header className="flex justify-end py-4">
-          <Button
-            variant="ghost"
-            onClick={toggleDark}
-            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-          >
-            <span aria-hidden="true">{dark ? <Sun size={16} /> : <Moon size={16} />}</span>
-          </Button>
-        </header>
 
         <main className="pb-16">
           <div className="max-w-2xl mx-auto space-y-8">
