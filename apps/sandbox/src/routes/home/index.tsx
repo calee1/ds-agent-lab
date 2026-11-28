@@ -3,6 +3,7 @@ import { Database, Cpu, CheckCircle, Eye, Sparkles, Palette, Shield, Layers, Sun
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
 export default function Home() {
   useEffect(() => {
@@ -26,13 +27,22 @@ export default function Home() {
 
         {/* Top bar — light/dark toggle */}
         <header className="flex justify-end py-4">
-          <Button
-            variant="ghost"
-            onClick={toggleDark}
-            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-          >
-            <span aria-hidden="true">{dark ? <Sun size={16} /> : <Moon size={16} />}</span>
-          </Button>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger
+                render={
+                  <Button
+                    variant="ghost"
+                    onClick={toggleDark}
+                    aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+                  />
+                }
+              >
+                <span aria-hidden="true">{dark ? <Sun size={16} /> : <Moon size={16} />}</span>
+              </TooltipTrigger>
+              <TooltipContent>{dark ? "Switch to light mode" : "Switch to dark mode"}</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </header>
 
         <main className="pb-16 space-y-20">
@@ -40,12 +50,12 @@ export default function Home() {
           {/* Section 1 — Hero */}
           <section className="text-center">
             <p className="text-sm text-muted-foreground mb-2">Human-AI eXperience</p>
-            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight">HAX Design System</h1>
+            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight">HAX Design</h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              An agent-driven design system where every UI is built by AI, validated by rules, and always on-brand.
+              An agent-driven website generator where every screen is built by AI, validated to be on-brand with approved design system components, following established UI guidelines, and generally accessible.
             </p>
             <div className="flex flex-wrap gap-4 justify-center mt-8">
-              <Button render={<a href="/hax-demo" />}>HAX demo</Button>
+              <Button variant="secondary" render={<a href="/hax-demo" />}>HAX demo</Button>
               <Button variant="secondary" render={<a href="/skin-demo" />}>Skins &amp; components</Button>
             </div>
             <div className="mt-12 flex justify-center">
@@ -61,7 +71,7 @@ export default function Home() {
           <section className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">What is HAX?</h2>
             <p className="text-muted-foreground">
-              HAX (Human-AI eXperience) is a design system built for AI-first workflows. Agents read a registry of
+              HAX (Human-AI eXperience) is a UI design ecosystem built as an AI-first workflow. Agents read a registry of
               tokens, decision records and patterns, then generate validated UI — no hand-coding required.
             </p>
             <p className="text-muted-foreground">
@@ -198,7 +208,7 @@ export default function Home() {
             <div className="text-center py-16 space-y-6">
               <h2 className="text-2xl font-semibold">Ready to explore?</h2>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Button render={<a href="/hax-demo" />}>HAX demo</Button>
+                <Button variant="secondary" render={<a href="/hax-demo" />}>HAX demo</Button>
                 <Button variant="secondary" render={<a href="/skin-demo" />}>Skins &amp; components</Button>
               </div>
             </div>
