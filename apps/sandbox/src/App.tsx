@@ -110,7 +110,7 @@ function SkinSwitcher({ skin, setSkin, mode, setMode }: {
 
 export default function App() {
   const { skin, setSkin, mode, setMode } = useSkinSwitcher()
-  const hideSwitcher = ["/" , "/hax-demo"].includes(window.location.pathname)
+  const hideSwitcher = ["/", "/hax-demo", "/skin-demo"].includes(window.location.pathname)
   const Page = resolve(window.location.pathname)
   if (!Page) {
     return (

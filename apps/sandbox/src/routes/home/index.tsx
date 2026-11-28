@@ -56,7 +56,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center mt-8">
               <Button variant="secondary" render={<a href="/hax-demo" />}>HAX demo</Button>
-              <Button variant="secondary" render={<a href="/skin-demo" />}>Skins &amp; components</Button>
+              <Button variant="secondary" render={<a href="/skin-demo" />}>Design System</Button>
             </div>
             <div className="mt-12 flex justify-center">
               <img
@@ -209,7 +209,7 @@ export default function Home() {
               <h2 className="text-2xl font-semibold">Ready to explore?</h2>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Button variant="secondary" render={<a href="/hax-demo" />}>HAX demo</Button>
-                <Button variant="secondary" render={<a href="/skin-demo" />}>Skins &amp; components</Button>
+                <Button variant="secondary" render={<a href="/skin-demo" />}>Design System</Button>
               </div>
             </div>
           </section>
